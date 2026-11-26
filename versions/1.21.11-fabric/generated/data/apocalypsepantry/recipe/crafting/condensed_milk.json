@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsepantry",
+  "ingredients": [
+    "apocalypsepantry:empty_can",
+    "minecraft:milk_bucket",
+    "minecraft:sugar",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "apocalypsepantry:condensed_milk"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsepantry",
+  "ingredients": [
+    {
+      "item": "apocalypsepantry:empty_canteen"
+    },
+    {
+      "item": "apocalypsepantry:bottled_water"
+    },
+    {
+      "item": "minecraft:fern"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    }
+  ],
+  "result": {
+    "id": "apocalypsepantry:herbal_tea_canteen"
+  }
+}

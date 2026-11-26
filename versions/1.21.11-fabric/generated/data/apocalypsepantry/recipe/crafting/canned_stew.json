@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsepantry",
+  "ingredients": [
+    "apocalypsepantry:empty_can",
+    "minecraft:cooked_beef",
+    "minecraft:potato"
+  ],
+  "result": {
+    "id": "apocalypsepantry:canned_stew"
+  }
+}

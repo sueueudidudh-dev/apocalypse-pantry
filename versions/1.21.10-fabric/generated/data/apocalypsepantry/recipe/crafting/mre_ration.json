@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsepantry",
+  "ingredients": [
+    "minecraft:paper",
+    "apocalypsepantry:hardtack",
+    "apocalypsepantry:jerky",
+    "apocalypsepantry:chocolate_ration"
+  ],
+  "result": {
+    "id": "apocalypsepantry:mre_ration"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": "minecraft:rotten_flesh",
+  "result": {
+    "id": "apocalypsepantry:zombie_jerky"
+  },
+  "experience": 0.35,
+  "cookingtime": 100
+}

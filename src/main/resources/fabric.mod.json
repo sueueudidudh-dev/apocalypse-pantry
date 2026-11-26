@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+  "name": "${name}",
+  "description": "Food for the end of the world: 17 survival foods and five effects built around a zombie apocalypse. Zombies can infect you; only the Herbal Tea Canteen cures it.",
+  "authors": [
+    "${author}"
+  ],
+  "license": "MIT",
+  "icon": "apocalypsepantry_logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.apocalypsepantry.ApocalypsePantryFabric"
+    ],
+    "client": [
+      "com.apocalypsepantry.ApocalypsePantryFabricClient"
+    ]
+  },
+  "mixins": [
+    "apocalypsepantry.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15",
+    "minecraft": "${minecraft}",
+    "fabric-api": "*"
+  }
+}

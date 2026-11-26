@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsepantry",
+  "ingredients": [
+    "minecraft:glass_bottle",
+    "minecraft:ice"
+  ],
+  "result": {
+    "id": "apocalypsepantry:bottled_water"
+  }
+}

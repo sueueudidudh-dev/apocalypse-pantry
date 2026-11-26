@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="${loader_range}"
+license="MIT"
+
+[[mods]]
+modId="${id}"
+version="${version}"
+displayName="${name}"
+authors="${author}"
+logoFile="apocalypsepantry_logo.png"
+description='''
+Food for the end of the world: 17 survival foods and five effects built around a zombie apocalypse.
+Zombies can infect you; only the Herbal Tea Canteen cures it.
+'''
+
+[[dependencies.${id}]]
+    modId="forge"
+    mandatory=true
+    versionRange="${forge_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${id}]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft}"
+    ordering="NONE"
+    side="BOTH"

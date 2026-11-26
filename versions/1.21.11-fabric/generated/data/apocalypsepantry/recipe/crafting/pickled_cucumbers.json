@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsepantry",
+  "ingredients": [
+    "minecraft:glass_bottle",
+    "minecraft:sea_pickle",
+    "minecraft:sea_pickle",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "apocalypsepantry:pickled_cucumbers"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsepantry",
+  "ingredients": [
+    "apocalypsepantry:bottled_water",
+    "minecraft:wheat",
+    "minecraft:dried_kelp",
+    "minecraft:paper"
+  ],
+  "result": {
+    "id": "apocalypsepantry:instant_noodles"
+  }
+}

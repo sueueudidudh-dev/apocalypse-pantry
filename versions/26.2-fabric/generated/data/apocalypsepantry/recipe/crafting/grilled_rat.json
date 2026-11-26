@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsepantry",
+  "ingredients": [
+    "minecraft:stick",
+    "minecraft:cooked_rabbit"
+  ],
+  "result": {
+    "id": "apocalypsepantry:grilled_rat"
+  }
+}
