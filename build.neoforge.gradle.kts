@@ -17,6 +17,10 @@ val requiredJava: JavaVersion = when {
     else -> JavaVersion.VERSION_21
 }
 
+dependencies {
+    implementation("maven.modrinth:farmers-delight:${sc.properties["deps.fd"]}")
+}
+
 neoForge {
     version = sc.properties["deps.neo_loader"]
 
@@ -54,7 +58,7 @@ tasks {
             "id" to modId, "name" to sc.properties["mod.name"], "version" to modVersion,
             "author" to sc.properties["mod.author"], "minecraft" to sc.properties["mod.mc_compat"],
             "loader_range" to sc.properties["deps.loader_range"], "neo_range" to sc.properties["deps.neo_range"],
-            "java" to "JAVA_${requiredJava.majorVersion}",
+            "fd_range" to sc.properties["deps.fd_range"], "java" to "JAVA_${requiredJava.majorVersion}",
         )
         inputs.properties(props)
         filesMatching(listOf("META-INF/neoforge.mods.toml", "*.mixins.json")) { expand(props) }

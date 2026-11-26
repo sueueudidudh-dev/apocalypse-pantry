@@ -164,7 +164,7 @@ def sky_layer(w, h, frame, n, seed, keep_out=lambda x, y: False, city=True, moon
 
 # ---------------------------------------------------------------- the crate scene (64x64 texels)
 FRAMES_PER = 24
-HOPPERS = ["canned_stew", "energy_drink", "herbal_tea_canteen"]
+HOPPERS = ["canned_stew", "energy_drink", "herbal_tea"]
 FRAMES = FRAMES_PER * len(HOPPERS)
 FPS = 12
 STILL = FRAMES_PER + 11
@@ -360,8 +360,25 @@ def banner_frames():
     return frames
 
 
-def save_anim(frames, stem, fps, corners=None):
+def limit_colours(frames, n=250):
+    """One shared palette of n colours for all frames (only when they hold more than a GIF can)."""
     rgb = [f.convert("RGB") for f in frames]
+    colours = set()
+    for f in rgb[::4]:
+        colours.update(c for _, c in f.getcolors(1 << 20))
+    if len(colours) <= 255:
+        return rgb
+    w, h = rgb[0].size
+    step = max(1, len(rgb) // 12)
+    sample = Image.new("RGB", (w, h * len(rgb[::step])))
+    for i, f in enumerate(rgb[::step]):
+        sample.paste(f, (0, i * h))
+    pal = sample.quantize(n, method=Image.Quantize.MEDIANCUT)
+    return [f.quantize(palette=pal, dither=Image.Dither.NONE).convert("RGB") for f in rgb]
+
+
+def save_anim(frames, stem, fps, corners=None):
+    rgb = limit_colours(frames)
     key = corners.point(lambda v: 255 - v) if corners is not None else None
     n = gifkit.write_gif(rgb, stem.with_suffix(".gif"), fps, key_mask=key)
     rgba = []
@@ -382,7 +399,7 @@ RING = "#121814"
 HEAD = dict(bands=RUST["bands"], extrude=["#3A2A1E", "#3A2A1E"])
 SECTIONS = [
     ("features", "FEATURES", "canned_beans", "energy_drink"),
-    ("effects", "EFFECTS", "zombie_jerky", "herbal_tea_canteen"),
+    ("effects", "EFFECTS", "zombie_jerky", "herbal_tea"),
     ("food", "FOOD", "survivor_stew", "mre_ration"),
     ("credits", "CREDITS", "hardtack", "chocolate_ration"),
     ("license", "LICENSE", "jerky", "condensed_milk"),
@@ -524,7 +541,7 @@ def tile_frames():
     top = pa.title_sprite(MOD_TOP, RUST, INK)
     main = pa.title_sprite(MOD_MAIN, TOXIC, INK)
     tag = pa.scaled(pa.label_sprite(TAGLINE, lambda i: ACCENT if i > TAG_ACCENT_FROM else "#FFFFFF", INK), 3)
-    pill = badge("SURVIVAL FOOD MOD")
+    pill = badge("FARMER'S DELIGHT ADD-ON")
 
     def keep_out(x, y):
         return (TILE_TEXT_X - 2 <= x < 186 and 10 <= y < 78) or (x < 76 and y > 8)
@@ -583,6 +600,7 @@ ITEMS = [  # id, English name, short effect line (SMALL font: upper case, no %)
     ("condensed_milk", "CONDENSED MILK", "ABSORPTION I, HASTE I"),
     ("energy_drink", "ENERGY DRINK", "ADRENALINE, THEN A CRASH"),
     ("bottled_water", "BOTTLED WATER", "CLEARS CRASH AND NAUSEA"),
+    ("herbal_tea", "HERBAL TEA", "CURES INFECTION"),
     ("mre_ration", "MRE RATION", "STAMINA 8:00, RESISTANCE I"),
     ("protein_bar", "PROTEIN BAR", "STRENGTH I, FAST TO EAT"),
     ("hardtack", "HARDTACK", "STAMINA 1:00, CHEAP"),
@@ -591,7 +609,6 @@ ITEMS = [  # id, English name, short effect line (SMALL font: upper case, no %)
     ("zombie_jerky", "ZOMBIE JERKY", "UNDEAD SCENT 2:00"),
     ("grilled_rat", "GRILLED RAT", "FILLING, MAY POISON YOU"),
     ("pickled_cucumbers", "PICKLED CUCUMBERS", "CLEARS POISON AND NAUSEA"),
-    ("herbal_tea_canteen", "HERBAL TEA CANTEEN", "CURES INFECTION"),
     ("survivor_stew", "SURVIVOR'S STEW", "RESISTANCE, REGEN, STAMINA"),
     ("chocolate_ration", "CHOCOLATE RATION", "SPEED I, HASTE I, ABSORPTION"),
 ]
@@ -648,17 +665,17 @@ FOOD_ROWS = [
     ("Canned Peaches", "5", "Speed I 1:00, Regeneration I 0:10", "Leaves an empty can"),
     ("Condensed Milk", "4", "Absorption I 2:00, Haste I 1:00", "Can be eaten when full; leaves an empty can"),
     ("Energy Drink", "1", "Adrenaline 0:45, then Crash 0:30", "Resets the time since you last slept; leaves an empty can"),
-    ("Bottled Water", "0", "Regeneration I 0:05", "Clears Crash, Hunger and Nausea; leaves a glass bottle"),
+    ("Bottled Water", "0", "Regeneration I 0:05", "Clears Crash, Hunger and Nausea; ice melted in the cooking pot"),
+    ("Herbal Tea", "2", "Comfort 1:00, Regeneration I 0:10", "Cures Infection"),
     ("MRE Ration", "10", "Stamina 8:00, Resistance I 2:00", "Slow to eat, stacks to 8"),
     ("Protein Bar", "4", "Strength I 0:45", "Eaten in 0.8 s"),
     ("Hardtack", "3", "Stamina 1:00", "Cheap to craft"),
-    ("Instant Noodles", "6", "Regeneration I 0:15, Stamina 2:00", "Made with bottled water"),
-    ("Jerky", "6", "Strength I 1:00", "Eaten in 0.8 s; cooked beef or porkchop with sugar"),
+    ("Instant Noodles", "6", "Comfort 2:00, Regeneration I 0:15, Stamina 2:00", "Raw pasta, dried kelp and onion in the cooking pot"),
+    ("Jerky", "6", "Strength I 1:00", "Eaten in 0.8 s; cooked beef or porkchop on the cutting board"),
     ("Zombie Jerky", "4", "Undead Scent 2:00, Nausea 0:05", "Rotten flesh in a smoker or on a campfire"),
     ("Grilled Rat", "5", "20% chance of Poison 0:10", "Gives the stick back"),
-    ("Pickled Cucumbers", "3", "-", "Clears Poison and Nausea"),
-    ("Herbal Tea Canteen", "2", "Regeneration I 0:10", "Cures Infection; leaves an empty canteen to refill"),
-    ("Survivor's Stew", "10", "Resistance I 3:00, Regeneration I 0:20, Stamina 6:00", "In a bowl, stacks to 16"),
+    ("Pickled Cucumbers", "3", "-", "Clears Poison and Nausea; leaves a glass bottle"),
+    ("Survivor's Stew", "10", "Nourishment 5:00, Resistance I 3:00, Regeneration I 0:20, Stamina 6:00", "In a bowl, stacks to 16"),
     ("Chocolate Ration", "5", "Speed I and Haste I 1:30, Absorption I 1:00", "-"),
 ]
 
@@ -672,20 +689,22 @@ def page_md(base):
     rows = "\n".join(f"| **{n}** | {h} | {e} | {o} |" for n, h, e, o in FOOD_ROWS)
     return f"""{img("banner.webp", MOD_NAME)}
 
-**Food for the end of the world: canned stew, MREs, energy drinks and zombie jerky, each with its own way to keep you alive.**
+**Food for the end of the world, cooked the Farmer's Delight way: canned stew, MREs, energy drinks and zombie jerky.**
 
-{MOD_NAME} adds 17 survival foods to Minecraft and five effects built around a zombie apocalypse: an Infection you catch from zombies, a scent that makes the undead ignore you, and an adrenaline rush that comes with a crash.
+{MOD_NAME} is an add-on for **Farmer's Delight** (**Farmer's Delight Refabricated** on Fabric). It adds 17 survival foods and five effects built around a zombie apocalypse: an Infection you catch from zombies, a scent that makes the undead ignore you, and an adrenaline rush that comes with a crash. Available for **Forge** 1.18.2, 1.19.2 and 1.20.1, **NeoForge** 1.21.1 and **Fabric** 1.20.1, 1.21.1, 1.21.5 – 1.21.11 and 26.1 – 26.3.
 
 {img("clips/pantry.webp", "The pantry")}
 
 {title("features", "Features")}
 
-- **17 survival foods.** Cans, rations, drinks and things you would only eat at the end of the world. Every item has its own 16×16 texture.
-- **Infection.** Zombies can infect you when they hit you. Only the Herbal Tea Canteen cures it, so keep one on you.
+- **17 survival foods.** Cans, rations, drinks and things you would only eat at the end of the world. Every item has its own texture in Farmer's Delight's style.
+- **Cooked like Farmer's Delight food.** Soups, cans and drinks simmer in the cooking pot, jerky is sliced on the cutting board, rations come together at the crafting table. The pot serves canned food into an empty can, drinks into a glass bottle and stew into a bowl. Recipes use Farmer's Delight's onions, tomato sauce, raw pasta, wheat dough and leafy greens.
+- **Infection.** Zombies can infect you when they hit you. Only Herbal Tea cures it, so keep a bottle on you.
 - **Food that fits the moment.** Protein Bars are eaten in a blink for fights, MREs fill you for a long trip, Energy Drinks get you out of trouble and Zombie Jerky lets you walk past the horde.
 - **Empty cans.** Canned food leaves an empty can: fill it again with new food or smelt it into an iron nugget.
 - **Zombie loot.** Zombies you kill sometimes drop canned food, hardtack, an energy drink or bottled water.
-- **Milk will not save you.** Infection survives milk and totems; the Herbal Tea Canteen is the only cure.
+- **Milk will not save you.** Infection survives milk and totems; Herbal Tea is the only cure.
+- **Comfort and Nourishment.** Herbal Tea and Instant Noodles give Farmer's Delight's Comfort, Survivor's Stew gives Nourishment.
 
 {title("effects", "Effects")}
 
@@ -705,7 +724,7 @@ def page_md(base):
 
 {title("credits", "Credits")}
 
-- Texture style inspired by **Farmer's Delight** by vectorwing.
+- **Farmer's Delight** by vectorwing.
 
 {title("license", "License")}
 

@@ -31,6 +31,7 @@ dependencies {
 
     modImplementation("net.fabricmc:fabric-loader:${sc.properties["deps.fabric_loader"]}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${sc.properties["deps.fabric_api"]}")
+    modImplementation("maven.modrinth:farmers-delight-refabricated:${sc.properties["deps.fd"]}")
 }
 
 // Per-version data (recipes, advancements, tags) written by tools/gen.py

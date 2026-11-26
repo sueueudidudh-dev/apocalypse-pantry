@@ -12,9 +12,17 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:wheat"
-            ]
+            "tag": "c:foods/doughs"
+          }
+        ]
+      }
+    },
+    "has_ingredient_1": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:crops/wheat"
           }
         ]
       }
@@ -23,7 +31,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ingredient_0"
+      "has_ingredient_0",
+      "has_ingredient_1"
     ]
   ],
   "rewards": {

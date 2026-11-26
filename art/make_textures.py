@@ -222,20 +222,22 @@ def mk_all():
             "................"],
          {'g':gold[1],'G':gold[3],'h':(232,240,226,255),'y':brine,'C':cu[3],'c':cu[1],'d':dl[2]}, shade=(3,12))
     P.outline(); items['pickled_cucumbers']=P
-    # 15 canteen with herbal tea
-    P=Px(); cn=ramp('#5d6b3a'); cp=ramp('#3a3c36',spread=0.06); sp=ramp('#8a6236')
-    for yy in range(3,15):
-        for x in range(2,14):
-            d=math.hypot(x+0.5-8,yy+0.5-9.2)
-            if d<=5.6:
-                k=4 if (x+0.5-6)**2+(yy+0.5-7)**2<3 else 3 if x<7 and yy<9 else 2 if d<4.6 else 1
-                P.set(x,yy,cn[k])
-    for x in (7,8):
-        for yy in (2,3): P.set(x,yy,cp[3 if x==7 else 2])
-    for i in range(16):
-        x=1+i; yy=4+int(i*0.7)
-        if (x,yy) in P.p or i<3: P.set(x,yy,sp[2])
-    P.outline(); items['herbal_tea_canteen']=P
+    # 15 herbal tea in a glass bottle (Farmer's Delight drink style)
+    P=Px(); cork=ramp('#9a6a3c',spread=0.08); gl=ramp('#cfe3e6',spread=0.07); tea=ramp('#9a7a2e',spread=0.08); lf=ramp('#5f9c3a')
+    for yy in (1,2):
+        for x in (7,8): P.set(x,yy,cork[3 if x==7 else 2])
+    for yy in (3,4):
+        for x in (7,8): P.set(x,yy,gl[3 if x==7 else 2])
+    for x in range(5,11): P.set(x,5,gl[3 if x<8 else 2])
+    for yy in range(6,15):
+        for x in range(4,12):
+            k=colshade((x-4)/7)
+            c=tea[k] if yy>=8 and 4<x<11 else gl[k]
+            P.set(x,yy,c)
+    for yy in range(6,13): P.set(5,yy,(236,244,240,255))
+    for x,yy in [(8,10),(9,9),(9,10),(10,9),(8,11)]: P.set(x,yy,lf[3] if yy<10 else lf[2])
+    P.p.pop((4,14)); P.p.pop((11,14)); P.p.pop((4,6)); P.p.pop((11,6))
+    P.outline(); items['herbal_tea']=P
     # 16 survivor's stew (Farmer's Delight style bowl)
     P=Px(); wd=ramp('#8a5a32',spread=0.07); stw=ramp('#9b4a2a'); car=ramp('#e2873a'); pot=ramp('#e2c98e'); hb=ramp('#5f9c3a')
     for yy in range(8,15):
@@ -270,7 +272,7 @@ for n,P in items.items(): P.img().save(f'{out}/textures/{n}.png')
 ru={'canned_beans':'Фасоль в томате','canned_stew':'Тушёнка','canned_peaches':'Консерв. персики','condensed_milk':'Сгущёнка',
 'energy_drink':'Энергетик','bottled_water':'Бутылка воды','mre_ration':'Сухпаёк (ИРП)','protein_bar':'Протеиновый батончик',
 'hardtack':'Галеты','instant_noodles':'Лапша быстр. пригот.','jerky':'Вяленое мясо','zombie_jerky':'Вяленая плоть зомби',
-'grilled_rat':'Крыса на палочке','pickled_cucumbers':'Банка солений','herbal_tea_canteen':'Фляга травяного чая',
+'grilled_rat':'Крыса на палочке','pickled_cucumbers':'Банка солений','herbal_tea':'Травяной чай',
 'survivor_stew':'Похлёбка выжившего','chocolate_ration':'Армейский шоколад'}
 try: font=ImageFont.truetype(r'C:\Windows\Fonts\segoeui.ttf',15)
 except: font=ImageFont.load_default()
@@ -307,7 +309,7 @@ fx={'canned_beans':['Голод 6, насыщ. 0.6','Запас сил 3:00','�
 'zombie_jerky':['Голод 4, насыщ. 0.3','Мёртвый запах 2:00','Тошнота 0:05'],
 'grilled_rat':['Голод 5, насыщ. 0.5','20%: Отравление 0:10','→ палка'],
 'pickled_cucumbers':['Голод 3, насыщ. 0.3','снимает Отравление','и Тошноту'],
-'herbal_tea_canteen':['Голод 2, насыщ. 0.2','ЛЕЧИТ ЗАРАЖЕНИЕ','Регенерация I 0:10'],
+'herbal_tea':['Голод 2, насыщ. 0.2','ЛЕЧИТ ЗАРАЖЕНИЕ','Уют 1:00, Регенерация I'],
 'survivor_stew':['Голод 10, насыщ. 0.8','Сопротивление I 3:00','Регенерация, Запас сил'],
 'chocolate_ration':['Голод 5, насыщ. 0.6','Скорость I, Спешка I 1:30','Поглощение I 1:00']}
 try:
@@ -334,24 +336,13 @@ cards.save(f'{out}/preview_cards.png')
 print(len(items),'ok')
 
 
-# ---- containers (not in the preview): empty can and empty canteen
+# ---- container (not in the preview): the empty can
 def extras():
-    tin=ramp('#a9adb3',spread=0.14); cn=ramp('#5d6b3a'); cp=ramp('#3a3c36',spread=0.06)
+    tin=ramp('#a9adb3',spread=0.14)
     P=Px()
     can(P,4,11,5,13,tin,tin,0,-1)
     for x in range(6,10): P.set(x,6,tin[0])
     for (x,y) in [(10,4),(11,3),(12,2),(11,4),(12,3)]: P.set(x,y,tin[3])
     P.outline(); P.img().save(f'{out}/textures/empty_can.png')
-    P=Px()
-    for yy in range(4,15):
-        for x in range(2,14):
-            d=math.hypot(x+0.5-8,yy+0.5-9.2)
-            if d<=5.6:
-                k=4 if (x+0.5-6)**2+(yy+0.5-7)**2<3 else 3 if x<7 and yy<9 else 2 if d<4.6 else 1
-                P.set(x,yy,cn[k])
-    for x in (7,8):
-        P.set(x,3,cp[3 if x==7 else 2])
-    P.set(7,2,cp[1]); P.set(8,2,cp[0])
-    P.outline(); P.img().save(f'{out}/textures/empty_canteen.png')
 extras()
 print('extras ok')

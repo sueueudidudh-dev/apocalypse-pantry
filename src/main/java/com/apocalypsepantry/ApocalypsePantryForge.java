@@ -8,7 +8,6 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.FakePlayerFactory;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -38,7 +37,6 @@ public final class ApocalypsePantryForge {
         EFFECTS.register(modBus);
         ITEMS.register(modBus);
         TABS.register(modBus);
-        MinecraftForge.EVENT_BUS.addListener((ItemTooltipEvent event) -> Tooltips.append(event.getItemStack(), event.getToolTip()));
         MinecraftForge.EVENT_BUS.addListener((ServerStartedEvent event) -> {
             if (SelfTest.enabled()) SelfTest.run(event.getServer(), FakePlayerFactory.getMinecraft(event.getServer().overworld()));
         });
@@ -52,7 +50,6 @@ public final class ApocalypsePantryForge {
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.FakePlayerFactory;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -73,7 +70,6 @@ public final class ApocalypsePantryForge {
         for (Food food : Foods.ALL) food.item = ITEMS.register(food.id, () -> FoodItems.create(food));
         EFFECTS.register(modBus);
         ITEMS.register(modBus);
-        MinecraftForge.EVENT_BUS.addListener((ItemTooltipEvent event) -> Tooltips.append(event.getItemStack(), event.getToolTip()));
         MinecraftForge.EVENT_BUS.addListener((ServerStartedEvent event) -> {
             if (SelfTest.enabled()) SelfTest.run(event.getServer(), FakePlayerFactory.getMinecraft(event.getServer().overworld()));
         });

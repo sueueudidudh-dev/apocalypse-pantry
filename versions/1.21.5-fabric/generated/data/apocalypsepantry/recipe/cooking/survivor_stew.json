@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "minecraft:beef",
+    "#c:crops/potato",
+    "#c:crops/carrot",
+    "minecraft:brown_mushroom",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "id": "apocalypsepantry:survivor_stew"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

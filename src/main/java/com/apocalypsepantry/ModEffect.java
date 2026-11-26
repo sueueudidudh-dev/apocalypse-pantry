@@ -8,7 +8,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 
 /**
  * The mod's effects. They do nothing on their own: EffectLogic reads them (called from the mixins), the same way on
- * every loader and version. Infection is milk-proof: only the Herbal Tea Canteen cures it.
+ * every loader and version. Infection is milk-proof: only Herbal Tea cures it.
  */
 public final class ModEffect extends MobEffect {
     private final boolean milkProof;

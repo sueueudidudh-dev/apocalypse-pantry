@@ -3,7 +3,7 @@
   py dev/srv.py <target>        target like 1.21.1-fabric, 1.20.1-forge, 1.21.1-neoforge
 
 Reuses the test servers in D:/minecraft mods razrab/_test/srv-<target>/ (installed for Stardew Delight). For the run,
-every other mod except Fabric API is moved to mods_off/ and put back afterwards. The server starts with
+every other mod except Fabric API and Farmer's Delight is moved to mods_off/ and put back afterwards. The server starts with
 -Dapocalypsepantry.selftest=true and gets "stop" after SELFTEST DONE. Prints the result lines and suspicious log lines.
 """
 import os
@@ -54,7 +54,7 @@ def main():
     os.makedirs(off, exist_ok=True)
     moved = []
     for f in os.listdir(mods):
-        if f.endswith('.jar') and not f.startswith('fabric-api'):
+        if f.endswith('.jar') and not f.startswith(('fabric-api', 'FarmersDelight')):
             shutil.move(os.path.join(mods, f), os.path.join(off, f))
             if not f.startswith('apocalypsepantry'):
                 moved.append(f)

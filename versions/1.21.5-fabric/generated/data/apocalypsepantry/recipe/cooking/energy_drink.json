@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "drinks",
+  "ingredients": [
+    "minecraft:sugar",
+    "minecraft:cocoa_beans",
+    "minecraft:glowstone_dust"
+  ],
+  "result": {
+    "id": "apocalypsepantry:energy_drink"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

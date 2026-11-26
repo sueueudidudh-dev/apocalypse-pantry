@@ -2,9 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "group": "apocalypsepantry",
   "ingredients": [
-    "minecraft:wheat",
-    "minecraft:wheat",
-    "minecraft:wheat"
+    "#c:foods/dough",
+    "#c:crops/wheat"
   ],
   "result": {
     "id": "apocalypsepantry:hardtack",

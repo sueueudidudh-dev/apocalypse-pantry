@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "apocalypsepantry:mre_ration",
+    "apocalypsepantry:protein_bar",
+    "apocalypsepantry:hardtack",
+    "apocalypsepantry:jerky",
+    "apocalypsepantry:zombie_jerky",
+    "apocalypsepantry:grilled_rat",
+    "apocalypsepantry:pickled_cucumbers"
+  ]
+}

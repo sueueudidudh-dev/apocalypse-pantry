@@ -10,7 +10,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.util.FakePlayerFactory;
-import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.event.server.ServerStartedEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -34,7 +33,6 @@ public final class ApocalypsePantryNeoForge {
         EFFECTS.register(modBus);
         ITEMS.register(modBus);
         TABS.register(modBus);
-        NeoForge.EVENT_BUS.addListener((ItemTooltipEvent event) -> Tooltips.append(event.getItemStack(), event.getToolTip()));
         NeoForge.EVENT_BUS.addListener((ServerStartedEvent event) -> {
             if (SelfTest.enabled()) SelfTest.run(event.getServer(), FakePlayerFactory.getMinecraft(event.getServer().overworld()));
         });

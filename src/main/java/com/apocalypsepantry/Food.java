@@ -8,8 +8,8 @@ import net.minecraft.world.item.Item;
 
 /** One food: what it leaves behind, how filling it is, how it is eaten and what it does. The list is in Foods. */
 public final class Food {
-    /** What is left after eating: nothing, a bowl, a glass bottle, an empty can, a stick or an empty canteen. */
-    public enum Container { NONE, BOWL, BOTTLE, CAN, STICK, CANTEEN }
+    /** What is left after eating: nothing, a bowl, a glass bottle, an empty can or a stick. */
+    public enum Container { NONE, BOWL, BOTTLE, CAN, STICK }
 
     /** An effect: registry id, duration in ticks, amplifier from 0. */
     public record Fx(String effect, int duration, int amplifier) {}

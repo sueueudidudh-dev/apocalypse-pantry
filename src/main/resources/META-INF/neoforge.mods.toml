@@ -1,6 +1,7 @@
 modLoader="javafml"
 loaderVersion="${loader_range}"
 license="MIT"
+issueTrackerURL="https://github.com/sueueudidudh-dev/apocalypse-pantry/issues"
 
 [[mods]]
 modId="${id}"
@@ -8,9 +9,9 @@ version="${version}"
 displayName="${name}"
 authors="${author}"
 logoFile="apocalypsepantry_logo.png"
+credits="Farmer's Delight by vectorwing."
 description='''
-Food for the end of the world: 17 survival foods and five effects built around a zombie apocalypse.
-Zombies can infect you; only the Herbal Tea Canteen cures it.
+A Farmer's Delight add-on with food for the end of the world: 17 survival foods cooked in the cooking pot, on the cutting board and at the crafting table, and five effects built around a zombie apocalypse. Zombies can infect you; only Herbal Tea cures it.
 '''
 
 [[mixins]]
@@ -28,4 +29,11 @@ config="${id}.mixins.json"
     type="required"
     versionRange="${minecraft}"
     ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${id}]]
+    modId="farmersdelight"
+    type="required"
+    versionRange="${fd_range}"
+    ordering="AFTER"
     side="BOTH"

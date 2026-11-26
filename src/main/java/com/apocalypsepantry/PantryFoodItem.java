@@ -1,21 +1,19 @@
 package com.apocalypsepantry;
 
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-//? if <1.21.2 {
-/*import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.item.UseAnim;
-*///?}
+import vectorwing.farmersdelight.common.item.ConsumableItem;
 
-/** A food or drink: Minecraft eats it, then FoodLogic applies its effects and the container is handed back. */
-public class PantryFoodItem extends Item implements PantryFood {
+/**
+ * A food. Farmer's Delight's ConsumableItem eats it and hands the container back (bowl, bottle, empty can, stick);
+ * FoodLogic adds the effects. No tooltip of its own.
+ */
+public class PantryFoodItem extends ConsumableItem implements PantryFood {
     private final Food food;
 
     public PantryFoodItem(Food food, Properties properties) {
-        super(properties);
+        super(properties, false, false);
         this.food = food;
     }
 
@@ -25,29 +23,9 @@ public class PantryFoodItem extends Item implements PantryFood {
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity consumer) {
-        Item container = ModItems.container(food.container);
-        ItemStack result = super.finishUsingItem(stack, level, consumer);
+    public void affectConsumer(ItemStack stack, Level level, LivingEntity consumer) {
         FoodLogic.eaten(food, level, consumer);
-        if (container == null) return result;
-        if (consumer instanceof Player player && player.getAbilities().instabuild) return result;
-        ItemStack back = new ItemStack(container);
-        if (result.isEmpty()) return back;
-        if (consumer instanceof Player player && !level.isClientSide()) Compat.giveBack(player, back);
-        return result;
     }
-
-    //? if <1.21.2 {
-    /*@Override
-    public UseAnim getUseAnimation(ItemStack stack) {
-        return food.drink ? UseAnim.DRINK : UseAnim.EAT;
-    }
-
-    @Override
-    public SoundEvent getEatingSound() {
-        return food.drink ? getDrinkingSound() : super.getEatingSound();
-    }
-    *///?}
 
     //? if >=1.20.5 <1.21.2 {
     /*@Override

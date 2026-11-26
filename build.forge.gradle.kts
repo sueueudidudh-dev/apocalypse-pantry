@@ -18,6 +18,8 @@ val requiredJava: JavaVersion = JavaVersion.VERSION_17
 dependencies {
     // Generates the refmap that maps the mixin targets to SRG names
     annotationProcessor("org.spongepowered:mixin:${sc.properties["deps.mixin"]}:processor")
+    // Farmer's Delight is published in SRG names: modImplementation remaps it for compiling and dev runs
+    modImplementation("maven.modrinth:farmers-delight:${sc.properties["deps.fd"]}")
 }
 
 legacyForge {
@@ -44,7 +46,7 @@ mixin {
     config("$modId.mixins.json")
 }
 
-// Per-version data (recipes, advancements, pack.mcmeta) written by tools/gen.py
+// Per-version data (recipes, advancements, tags, pack.mcmeta) written by tools/gen.py
 sourceSets.named("main") { resources.srcDir(project.file("generated")) }
 
 java {
@@ -64,7 +66,7 @@ tasks {
             "id" to modId, "name" to sc.properties["mod.name"], "version" to modVersion,
             "author" to sc.properties["mod.author"], "minecraft" to sc.properties["mod.mc_compat"],
             "loader_range" to sc.properties["deps.loader_range"], "forge_range" to sc.properties["deps.forge_range"],
-            "java" to "JAVA_${requiredJava.majorVersion}",
+            "fd_range" to sc.properties["deps.fd_range"], "java" to "JAVA_${requiredJava.majorVersion}",
         )
         inputs.properties(props)
         filesMatching("META-INF/mods.toml") { expand(props) }

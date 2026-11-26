@@ -3,7 +3,7 @@
   "group": "apocalypsepantry",
   "ingredients": [
     {
-      "item": "minecraft:wheat"
+      "tag": "forge:crops/wheat"
     },
     {
       "item": "minecraft:honey_bottle"

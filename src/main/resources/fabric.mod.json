@@ -3,19 +3,20 @@
   "id": "${id}",
   "version": "${version}",
   "name": "${name}",
-  "description": "Food for the end of the world: 17 survival foods and five effects built around a zombie apocalypse. Zombies can infect you; only the Herbal Tea Canteen cures it.",
+  "description": "A Farmer's Delight add-on with food for the end of the world: 17 survival foods cooked in the cooking pot, on the cutting board and at the crafting table, and five effects built around a zombie apocalypse. Zombies can infect you; only Herbal Tea cures it.",
   "authors": [
     "${author}"
   ],
+  "contact": {
+    "sources": "https://github.com/sueueudidudh-dev/apocalypse-pantry",
+    "issues": "https://github.com/sueueudidudh-dev/apocalypse-pantry/issues"
+  },
   "license": "MIT",
   "icon": "apocalypsepantry_logo.png",
   "environment": "*",
   "entrypoints": {
     "main": [
       "com.apocalypsepantry.ApocalypsePantryFabric"
-    ],
-    "client": [
-      "com.apocalypsepantry.ApocalypsePantryFabricClient"
     ]
   },
   "mixins": [
@@ -24,6 +25,7 @@
   "depends": {
     "fabricloader": ">=0.15",
     "minecraft": "${minecraft}",
-    "fabric-api": "*"
+    "fabric-api": "*",
+    "farmersdelight": "*"
   }
 }

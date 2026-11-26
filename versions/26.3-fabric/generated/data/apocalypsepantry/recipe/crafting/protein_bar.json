@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "group": "apocalypsepantry",
   "ingredients": [
-    "minecraft:wheat",
+    "#c:crops/wheat",
     "minecraft:honey_bottle",
     "minecraft:pumpkin_seeds",
     "minecraft:paper"

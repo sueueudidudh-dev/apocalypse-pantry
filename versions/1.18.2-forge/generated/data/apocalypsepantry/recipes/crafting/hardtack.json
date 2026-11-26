@@ -3,13 +3,10 @@
   "group": "apocalypsepantry",
   "ingredients": [
     {
-      "item": "minecraft:wheat"
+      "tag": "forge:dough"
     },
     {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
+      "tag": "forge:crops/wheat"
     }
   ],
   "result": {

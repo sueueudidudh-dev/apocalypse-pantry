@@ -25,7 +25,7 @@ stonecutter {
             }
         }
 
-        // The same targets as Stardew Delight
+        // Every target has a matching Farmer's Delight release (Refabricated on Fabric)
         match("26.3", "fabric")
         match("26.2", "fabric")
         match("26.1", "fabric")
@@ -52,6 +52,13 @@ gradle.lifecycle.beforeProject {
         }
     }
 
+    repositories {
+        // Farmer's Delight (Forge/NeoForge) and Farmer's Delight Refabricated (Fabric) come from Modrinth
+        exclusiveContent {
+            forRepository { maven("https://api.modrinth.com/maven") { name = "Modrinth" } }
+            filter { includeGroup("maven.modrinth") }
+        }
+    }
 }
 
 rootProject.name = "Apocalypse Pantry"

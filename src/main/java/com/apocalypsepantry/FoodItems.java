@@ -14,7 +14,8 @@ public final class FoodItems {
     private FoodItems() {}
 
     public static Item create(Food food) {
-        return new PantryFoodItem(food, properties(food));
+        Item.Properties properties = properties(food);
+        return food.drink ? new PantryDrinkItem(food, properties) : new PantryFoodItem(food, properties);
     }
 
     /** A plain item (the containers). */

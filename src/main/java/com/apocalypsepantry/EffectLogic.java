@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 
 /** How the mod's effects work. Called from the mixins (LivingEntity, Mob, Player, ServerPlayer). */
 public final class EffectLogic {
-    /** Infection lasts an hour unless cured; Weakness after 5 minutes, Slowness after 10. */
+    /** Infection lasts an hour unless Herbal Tea cures it; Weakness after 5 minutes, Slowness after 10. */
     public static final int INFECTION_TICKS = 72000;
     static final int WEAKNESS_AFTER = 6000;
     static final int SLOWNESS_AFTER = 12000;

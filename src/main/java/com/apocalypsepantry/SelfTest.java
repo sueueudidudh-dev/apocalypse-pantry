@@ -107,7 +107,7 @@ public final class SelfTest {
             player.removeAllEffects();
             check(has(player, ap + "infection"), "removeAllEffects() removes Infection");
             // ... and only the herbal tea cures it
-            new ItemStack(Foods.byId("herbal_tea_canteen").item()).finishUsingItem(level, player);
+            new ItemStack(Foods.byId("herbal_tea").item()).finishUsingItem(level, player);
             check(!has(player, ap + "infection"), "herbal tea does not cure Infection");
             // Zombie loot when a player kills it (LivingEntity mixin)
             EffectLogic.forceLoot = true;
