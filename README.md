@@ -1,6 +1,6 @@
 <p align="center"><img src="page/docs/banner.gif" alt="Apocalypse Pantry" width="100%"></p>
 
-**Food for the end of the world.** 17 survival foods and five effects built around a zombie apocalypse.
+**Food for the end of the world.** 48 survival foods and five effects built around a zombie apocalypse.
 The mod page text is in [`page/docs/description.md`](page/docs/description.md).
 
 # Apocalypse Pantry — аддон для Farmer's Delight: еда для зомби-апокалипсиса
@@ -27,7 +27,7 @@ The mod page text is in [`page/docs/description.md`](page/docs/description.md).
 | 1.18.2 | Forge | `apocalypsepantry-forge-1.18.2-1.0.0.jar` |
 
 ## Что в моде
-* **17 блюд** (`Foods.java`) и пустая банка. Предметы — `ConsumableItem` / `DrinkableItem` из Farmer's Delight: консервы
+* **48 блюд** (`Foods.java`) и пустая банка. Предметы — `ConsumableItem` / `DrinkableItem` из Farmer's Delight: консервы
   оставляют пустую банку, вода, чай и соления — стеклянную бутылку, похлёбка — миску, крыса — палку.
   Кастрюля FD сама просит эту тару при готовке. Своих подсказок у предметов нет.
 * **5 эффектов** (`EffectLogic.java`, миксины в `mixin/`):

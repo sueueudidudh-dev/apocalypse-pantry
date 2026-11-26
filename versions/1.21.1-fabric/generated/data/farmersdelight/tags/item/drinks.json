@@ -3,6 +3,11 @@
   "values": [
     "apocalypsepantry:energy_drink",
     "apocalypsepantry:bottled_water",
-    "apocalypsepantry:herbal_tea"
+    "apocalypsepantry:herbal_tea",
+    "apocalypsepantry:cola",
+    "apocalypsepantry:instant_coffee",
+    "apocalypsepantry:kvass",
+    "apocalypsepantry:moonshine",
+    "apocalypsepantry:pine_needle_tea"
   ]
 }

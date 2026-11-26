@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsepantry",
+  "ingredients": [
+    "minecraft:bowl",
+    "minecraft:dandelion",
+    "minecraft:dandelion",
+    "#c:foods/leafy_green"
+  ],
+  "result": {
+    "id": "apocalypsepantry:dandelion_salad"
+  }
+}

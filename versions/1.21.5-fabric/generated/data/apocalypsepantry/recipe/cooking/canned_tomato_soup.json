@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "farmersdelight:tomato_sauce",
+    "#c:crops/tomato",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "id": "apocalypsepantry:canned_tomato_soup"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

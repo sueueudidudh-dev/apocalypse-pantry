@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "#c:crops/wheat",
+    "#c:crops/wheat",
+    "#c:drinks/milk"
+  ],
+  "result": {
+    "id": "apocalypsepantry:porridge"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

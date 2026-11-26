@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "drinks",
+  "ingredients": [
+    "minecraft:sugar",
+    "minecraft:sugar",
+    "minecraft:sweet_berries"
+  ],
+  "result": {
+    "id": "apocalypsepantry:cola"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

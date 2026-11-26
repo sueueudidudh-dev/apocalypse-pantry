@@ -611,8 +611,40 @@ ITEMS = [  # id, English name, short effect line (SMALL font: upper case, no %)
     ("pickled_cucumbers", "PICKLED CUCUMBERS", "CLEARS POISON AND NAUSEA"),
     ("survivor_stew", "SURVIVOR'S STEW", "RESISTANCE, REGEN, STAMINA"),
     ("chocolate_ration", "CHOCOLATE RATION", "SPEED I, HASTE I, ABSORPTION"),
+    ("canned_fish", "CANNED FISH", "WATER BREATHING I 1:00, STAMINA 2:00"),
+    ("canned_tomato_soup", "CANNED TOMATO SOUP", "COMFORT 2:00"),
+    ("canned_mushrooms", "CANNED MUSHROOMS", "NIGHT VISION I 1:00"),
+    ("canned_ham", "CANNED HAM", "STRENGTH I 1:00"),
+    ("canned_dog_food", "CANNED DOG FOOD", "MAY GIVE HUNGER"),
+    ("cola", "COLA", "SPEED I 0:30"),
+    ("instant_coffee", "INSTANT COFFEE", "HASTE I 1:00"),
+    ("kvass", "KVASS", "STAMINA 2:00"),
+    ("moonshine", "MOONSHINE", "RESISTANCE I 1:00, NAUSEA I 0:10"),
+    ("pine_needle_tea", "PINE NEEDLE TEA", "COMFORT 1:00, REGENERATION I 0:05"),
+    ("marrow_soup", "MARROW SOUP", "COMFORT 2:00"),
+    ("game_stew", "GAME STEW", "NOURISHMENT 3:00"),
+    ("dandelion_salad", "DANDELION SALAD", "REGENERATION I 0:10"),
+    ("porridge", "RATION PORRIDGE", "COMFORT 1:00"),
+    ("rice_gruel", "RICE GRUEL", "COMFORT 1:00"),
+    ("bunker_chili", "BUNKER CHILI", "NOURISHMENT 2:00, FIRE RESISTANCE I 2:00"),
+    ("scavenger_soup", "SCAVENGER SOUP", "COMFORT 3:00"),
+    ("rice_crackers", "RICE CRACKERS", "STAMINA 0:30"),
+    ("trail_mix", "TRAIL MIX", "SPEED I 0:30"),
+    ("granola_bar", "GRANOLA BAR", "HASTE I 0:45"),
+    ("dried_fruit", "DRIED FRUIT", "REGENERATION I 0:05"),
+    ("fish_jerky", "FISH JERKY", "WATER BREATHING I 0:30"),
+    ("roasted_spider_eye", "ROASTED SPIDER EYE", "NIGHT VISION I 0:30"),
+    ("boiled_eggs", "BOILED EGGS", "STAMINA 0:30"),
+    ("pemmican", "PEMMICAN", "STAMINA 4:00"),
+    ("hard_candy", "HARD CANDY", "SPEED I 0:10"),
+    ("pickled_eggs", "PICKLED EGGS", "RESISTANCE I 1:00"),
+    ("sauerkraut", "SAUERKRAUT", "REGENERATION I 0:10, CLEARS NAUSEA"),
+    ("mystery_meat", "MYSTERY MEAT", "MAY GIVE HUNGER"),
+    ("emergency_ration", "EMERGENCY RATION", "ABSORPTION I 1:00, STAMINA 3:00"),
+    ("mushroom_skewer", "MUSHROOM SKEWER", "NIGHT VISION I 0:20"),
 ]
-CW, CH = 192, 80
+ROWS = (len(ITEMS) + 1 + 8) // 9
+CW, CH = 192, 14 + ROWS * 20 + 26
 SLOT = 20
 GX, GY = (CW - 9 * SLOT) // 2, 14
 
@@ -629,9 +661,9 @@ def slot(im, x, y, sel=False):
 
 
 def pantry_frames():
-    REVEAL, SHOW = 2, 8
+    REVEAL, SHOW = 1, 4
     total = len(ITEMS) * REVEAL + 4 + len(ITEMS) * SHOW
-    title = pa.label_sprite("THE PANTRY: 17 ITEMS", lambda i: ACCENT if i > 11 else "#FFFFFF", INK)
+    title = pa.label_sprite(f"THE PANTRY: {len(ITEMS)} FOODS", lambda i: ACCENT if i > 11 else "#FFFFFF", INK)
     sprites = [item(n) for n, _, _ in ITEMS]
     frames = []
     for f in range(total):
@@ -642,7 +674,7 @@ def pantry_frames():
         sel = None
         if f >= len(ITEMS) * REVEAL + 4:
             sel = (f - len(ITEMS) * REVEAL - 4) // SHOW
-        for i in range(18):
+        for i in range(ROWS * 9):
             x, y = GX + (i % 9) * SLOT, GY + (i // 9) * SLOT
             slot(im, x, y, sel == i)
             if i < shown:
@@ -652,8 +684,8 @@ def pantry_frames():
             _, name, fx = ITEMS[sel]
             a = pa.label_sprite(name, "#FFE7C0", INK)
             b = pa.label_sprite(fx, ACCENT, INK)
-            im.alpha_composite(a, ((CW - a.width) // 2, 57))
-            im.alpha_composite(b, ((CW - b.width) // 2, 67))
+            im.alpha_composite(a, ((CW - a.width) // 2, CH - 23))
+            im.alpha_composite(b, ((CW - b.width) // 2, CH - 13))
         frames.append(pa.scaled(im, SCALE))
     return frames
 
@@ -677,6 +709,37 @@ FOOD_ROWS = [
     ("Pickled Cucumbers", "3", "-", "Clears Poison and Nausea; leaves a glass bottle"),
     ("Survivor's Stew", "10", "Nourishment 5:00, Resistance I 3:00, Regeneration I 0:20, Stamina 6:00", "In a bowl, stacks to 16"),
     ("Chocolate Ration", "5", "Speed I and Haste I 1:30, Absorption I 1:00", "-"),
+    ("Canned Fish", "6", "Water Breathing I 1:00, Stamina 2:00", "Cooking pot; leaves an empty can"),
+    ("Canned Tomato Soup", "6", "Comfort 2:00", "Cooking pot; leaves an empty can"),
+    ("Canned Mushrooms", "5", "Night Vision I 1:00", "Cooking pot; leaves an empty can"),
+    ("Canned Ham", "8", "Strength I 1:00", "Cooking pot; leaves an empty can"),
+    ("Canned Dog Food", "4", "30% chance of Hunger 0:15", "Cooking pot; leaves an empty can"),
+    ("Cola", "2", "Speed I 0:30", "Cooking pot; leaves an empty can"),
+    ("Instant Coffee", "1", "Haste I 1:00", "Cooking pot; leaves a glass bottle; resets the time since you last slept"),
+    ("Kvass", "2", "Stamina 2:00", "Cooking pot; leaves a glass bottle"),
+    ("Moonshine", "1", "Resistance I 1:00, Nausea I 0:10", "Cooking pot; leaves a glass bottle"),
+    ("Pine Needle Tea", "2", "Comfort 1:00, Regeneration I 0:05", "Cooking pot; leaves a glass bottle"),
+    ("Marrow Soup", "4", "Comfort 2:00", "Cooking pot; in a bowl"),
+    ("Game Stew", "9", "Nourishment 3:00", "Cooking pot; in a bowl"),
+    ("Dandelion Salad", "4", "Regeneration I 0:10", "Crafting table; in a bowl"),
+    ("Ration Porridge", "6", "Comfort 1:00", "Cooking pot; in a bowl"),
+    ("Rice Gruel", "5", "Comfort 1:00", "Cooking pot; in a bowl"),
+    ("Bunker Chili", "9", "Nourishment 2:00, Fire Resistance I 2:00", "Cooking pot; in a bowl"),
+    ("Scavenger Soup", "8", "Comfort 3:00", "Cooking pot; in a bowl"),
+    ("Rice Crackers", "3", "Stamina 0:30", "Crafting table; eaten in 0.8 s"),
+    ("Trail Mix", "4", "Speed I 0:30", "Crafting table; eaten in 0.8 s"),
+    ("Granola Bar", "4", "Haste I 0:45", "Crafting table"),
+    ("Dried Fruit", "3", "Regeneration I 0:05", "Smoker; eaten in 0.8 s"),
+    ("Fish Jerky", "5", "Water Breathing I 0:30", "Crafting table; eaten in 0.8 s"),
+    ("Roasted Spider Eye", "2", "Night Vision I 0:30, 10% chance of Poison 0:05", "Campfire or smoker"),
+    ("Boiled Eggs", "4", "Stamina 0:30", "Cooking pot"),
+    ("Pemmican", "8", "Stamina 4:00", "Crafting table"),
+    ("Hard Candy", "1", "Speed I 0:10", "Crafting table; eaten in 0.8 s"),
+    ("Pickled Eggs", "5", "Resistance I 1:00", "Cooking pot; leaves a glass bottle"),
+    ("Sauerkraut", "4", "Regeneration I 0:10", "Cooking pot; leaves a glass bottle; clears Nausea"),
+    ("Mystery Meat", "6", "30% chance of Hunger 0:20", "Crafting table"),
+    ("Emergency Ration", "6", "Absorption I 1:00, Stamina 3:00", "Crafting table"),
+    ("Mushroom Skewer", "4", "Night Vision I 0:20", "Crafting table; gives the stick back"),
 ]
 
 
@@ -691,13 +754,13 @@ def page_md(base):
 
 **Food for the end of the world, cooked the Farmer's Delight way: canned stew, MREs, energy drinks and zombie jerky.**
 
-{MOD_NAME} is an add-on for **Farmer's Delight** (**Farmer's Delight Refabricated** on Fabric). It adds 17 survival foods and five effects built around a zombie apocalypse: an Infection you catch from zombies, a scent that makes the undead ignore you, and an adrenaline rush that comes with a crash. Available for **Forge** 1.18.2, 1.19.2 and 1.20.1, **NeoForge** 1.21.1 and **Fabric** 1.20.1, 1.21.1, 1.21.5 – 1.21.11 and 26.1 – 26.3.
+{MOD_NAME} is an add-on for **Farmer's Delight** (**Farmer's Delight Refabricated** on Fabric). It adds 48 survival foods and five effects built around a zombie apocalypse: an Infection you catch from zombies, a scent that makes the undead ignore you, and an adrenaline rush that comes with a crash. Available for **Forge** 1.18.2, 1.19.2 and 1.20.1, **NeoForge** 1.21.1 and **Fabric** 1.20.1, 1.21.1, 1.21.5 – 1.21.11 and 26.1 – 26.3.
 
 {img("clips/pantry.webp", "The pantry")}
 
 {title("features", "Features")}
 
-- **17 survival foods.** Cans, rations, drinks and things you would only eat at the end of the world. Every item has its own texture in Farmer's Delight's style.
+- **48 survival foods.** Cans, rations, drinks and things you would only eat at the end of the world. Every item has its own texture in Farmer's Delight's style.
 - **Cooked like Farmer's Delight food.** Soups, cans and drinks simmer in the cooking pot, jerky is sliced on the cutting board, rations come together at the crafting table. The pot serves canned food into an empty can, drinks into a glass bottle and stew into a bowl. Recipes use Farmer's Delight's onions, tomato sauce, raw pasta, wheat dough and leafy greens.
 - **Infection.** Zombies can infect you when they hit you. Only Herbal Tea cures it, so keep a bottle on you.
 - **Food that fits the moment.** Protein Bars are eaten in a blink for fights, MREs fill you for a long trip, Energy Drinks get you out of trouble and Zombie Jerky lets you walk past the horde.

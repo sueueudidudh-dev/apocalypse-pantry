@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "drinks",
+  "ingredients": [
+    "minecraft:bread",
+    "minecraft:sugar",
+    "#c:crops/wheat"
+  ],
+  "result": {
+    "id": "apocalypsepantry:kvass"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

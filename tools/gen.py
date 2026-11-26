@@ -40,6 +40,37 @@ ITEMS = {
     'pickled_cucumbers': ('Pickled Cucumbers', 'Банка солений', 'snacks'),
     'survivor_stew': ("Survivor's Stew", 'Похлёбка выжившего', 'meals'),
     'chocolate_ration': ('Chocolate Ration', 'Армейский шоколад', 'sweets'),
+    'canned_fish': ("Canned Fish", "Рыбные консервы", 'meals'),
+    'canned_tomato_soup': ("Canned Tomato Soup", "Томатный суп в банке", 'meals'),
+    'canned_mushrooms': ("Canned Mushrooms", "Грибы в банке", 'meals'),
+    'canned_ham': ("Canned Ham", "Ветчина в банке", 'meals'),
+    'canned_dog_food': ("Canned Dog Food", "Собачий корм в банке", 'meals'),
+    'cola': ("Cola", "Газировка", 'drinks'),
+    'instant_coffee': ("Instant Coffee", "Растворимый кофе", 'drinks'),
+    'kvass': ("Kvass", "Квас", 'drinks'),
+    'moonshine': ("Moonshine", "Самогон", 'drinks'),
+    'pine_needle_tea': ("Pine Needle Tea", "Хвойный чай", 'drinks'),
+    'marrow_soup': ("Marrow Soup", "Похлёбка из костей", 'meals'),
+    'game_stew': ("Game Stew", "Рагу из дичи", 'meals'),
+    'dandelion_salad': ("Dandelion Salad", "Салат из одуванчиков", 'meals'),
+    'porridge': ("Ration Porridge", "Каша из пайка", 'meals'),
+    'rice_gruel': ("Rice Gruel", "Рисовая баланда", 'meals'),
+    'bunker_chili': ("Bunker Chili", "Чили из бункера", 'meals'),
+    'scavenger_soup': ("Scavenger Soup", "Похлёбка мародёра", 'meals'),
+    'rice_crackers': ("Rice Crackers", "Рисовые хлебцы", 'snacks'),
+    'trail_mix': ("Trail Mix", "Походная смесь", 'snacks'),
+    'granola_bar': ("Granola Bar", "Гранола", 'snacks'),
+    'dried_fruit': ("Dried Fruit", "Сухофрукты", 'sweets'),
+    'fish_jerky': ("Fish Jerky", "Рыбная вяленка", 'snacks'),
+    'roasted_spider_eye': ("Roasted Spider Eye", "Жареный паучий глаз", 'snacks'),
+    'boiled_eggs': ("Boiled Eggs", "Варёные яйца", 'snacks'),
+    'pemmican': ("Pemmican", "Пеммикан", 'snacks'),
+    'hard_candy': ("Hard Candy", "Леденцы", 'sweets'),
+    'pickled_eggs': ("Pickled Eggs", "Маринованные яйца", 'snacks'),
+    'sauerkraut': ("Sauerkraut", "Квашеная капуста", 'snacks'),
+    'mystery_meat': ("Mystery Meat", "Мясо неизвестного происхождения", 'snacks'),
+    'emergency_ration': ("Emergency Ration", "Аварийный паёк", 'snacks'),
+    'mushroom_skewer': ("Mushroom Skewer", "Грибной шашлык", 'snacks'),
     'empty_can': ('Empty Can', 'Пустая банка', None),
 }
 EFFECTS = {
@@ -77,19 +108,54 @@ R = [
     ('survivor_stew', 'pot', ['minecraft:beef', '#forge:crops/potato', '#forge:crops/carrot', 'minecraft:brown_mushroom',
                               '#forge:crops/onion'], {}),
     ('chocolate_ration', 'craft', ['minecraft:cocoa_beans', 'minecraft:cocoa_beans', 'minecraft:sugar', 'minecraft:paper'], {'count': 2}),
+    ('canned_fish', 'pot', ["#forge:raw_fishes", "#forge:raw_fishes", "minecraft:kelp"], {}),
+    ('canned_tomato_soup', 'pot', ["fd:tomato_sauce", "#forge:crops/tomato", "#forge:crops/onion"], {}),
+    ('canned_mushrooms', 'pot', ["minecraft:brown_mushroom", "minecraft:red_mushroom", "#forge:crops/onion"], {}),
+    ('canned_ham', 'pot', ["minecraft:porkchop", "minecraft:porkchop", "minecraft:sugar"], {}),
+    ('canned_dog_food', 'pot', ["minecraft:rotten_flesh", "minecraft:bone_meal", "#forge:crops/wheat"], {}),
+    ('cola', 'pot', ["minecraft:sugar", "minecraft:sugar", "minecraft:sweet_berries"], {"tab": "drinks"}),
+    ('instant_coffee', 'pot', ["minecraft:cocoa_beans", "minecraft:cocoa_beans", "minecraft:sugar"], {"tab": "drinks"}),
+    ('kvass', 'pot', ["minecraft:bread", "minecraft:sugar", "#forge:crops/wheat"], {"tab": "drinks"}),
+    ('moonshine', 'pot', ["#forge:crops/potato", "#forge:crops/potato", "minecraft:sugar"], {"tab": "drinks"}),
+    ('pine_needle_tea', 'pot', ["minecraft:spruce_leaves", "minecraft:spruce_leaves", "minecraft:sugar"], {"tab": "drinks"}),
+    ('marrow_soup', 'pot', ["minecraft:bone", "minecraft:bone", "#forge:crops/onion"], {}),
+    ('game_stew', 'pot', ["minecraft:rabbit", "#forge:crops/potato", "#forge:crops/carrot", "#forge:crops/onion"], {}),
+    ('dandelion_salad', 'craft', ["minecraft:bowl", "minecraft:dandelion", "minecraft:dandelion", "#forge:salad_ingredients"], {}),
+    ('porridge', 'pot', ["#forge:crops/wheat", "#forge:crops/wheat", "#forge:milk"], {}),
+    ('rice_gruel', 'pot', ["#forge:crops/rice", "#forge:crops/rice", "minecraft:dried_kelp"], {}),
+    ('bunker_chili', 'pot', ["minecraft:beef", "fd:tomato_sauce", "minecraft:cocoa_beans", "#forge:crops/onion"], {}),
+    ('scavenger_soup', 'pot', ["#forge:crops/potato", "#forge:crops/carrot", "#forge:crops/cabbage", "#forge:crops/onion"], {}),
+    ('rice_crackers', 'craft', ["#forge:crops/rice", "#forge:crops/rice"], {"count": 2}),
+    ('trail_mix', 'craft', ["minecraft:pumpkin_seeds", "minecraft:melon_seeds", "minecraft:sweet_berries", "minecraft:cocoa_beans", "minecraft:paper"], {"count": 2}),
+    ('granola_bar', 'craft', ["#forge:crops/wheat", "minecraft:honey_bottle", "minecraft:sweet_berries", "minecraft:paper"], {"count": 2}),
+    ('dried_fruit', 'smoke', "minecraft:apple", {"xp": 0.35}),
+    ('fish_jerky', 'craft', ["#forge:cooked_fishes", "minecraft:sugar"], {"count": 2}),
+    ('roasted_spider_eye', 'campfire', "minecraft:spider_eye", {"xp": 0.35}),
+    ('roasted_spider_eye_from_smoker', 'smoke', "minecraft:spider_eye", {"xp": 0.35, "result": "ap:roasted_spider_eye"}),
+    ('boiled_eggs', 'pot', ["#forge:eggs", "#forge:eggs"], {"count": 2}),
+    ('pemmican', 'craft', ["minecraft:cooked_beef", "minecraft:sweet_berries", "minecraft:sweet_berries", "minecraft:paper"], {"count": 2}),
+    ('hard_candy', 'craft', ["minecraft:sugar", "minecraft:sugar", "minecraft:sweet_berries"], {"count": 4}),
+    ('pickled_eggs', 'pot', ["#forge:eggs", "#forge:eggs", "minecraft:sugar"], {}),
+    ('sauerkraut', 'pot', ["#forge:crops/cabbage", "#forge:crops/cabbage", "minecraft:sugar"], {}),
+    ('mystery_meat', 'craft', ["minecraft:rotten_flesh", "minecraft:cooked_mutton"], {"count": 2}),
+    ('emergency_ration', 'craft', ["ap:hardtack", "minecraft:honey_bottle", "minecraft:paper"], {}),
+    ('mushroom_skewer', 'craft', ["minecraft:stick", "minecraft:brown_mushroom", "minecraft:red_mushroom"], {}),
 ]
 COOK = {'smelt': ('minecraft:smelting', 200), 'smoke': ('minecraft:smoking', 100), 'campfire': ('minecraft:campfire_cooking', 600)}
 
-CROPS = ['potato', 'onion', 'carrot', 'wheat']
-_FORGE_TAGS = ['#forge:milk', '#forge:dough', '#forge:salad_ingredients', '#forge:pasta'] + [f'#forge:crops/{c}' for c in CROPS]
+CROPS = ['potato', 'onion', 'carrot', 'wheat', 'rice', 'cabbage', 'tomato']
+_FORGE_TAGS = ['#forge:milk', '#forge:dough', '#forge:salad_ingredients', '#forge:pasta', '#forge:eggs', '#forge:raw_fishes',
+               '#forge:cooked_fishes'] + [f'#forge:crops/{c}' for c in CROPS]
 TAGS = {
     'forge': {t: t for t in _FORGE_TAGS},
     'fab120': {**{f'#forge:crops/{c}': f'#c:crops/{c}' for c in CROPS},
                '#forge:milk': '#c:milks', '#forge:dough': '#c:foods/doughs', '#forge:salad_ingredients': '#c:salad_ingredients',
-               '#forge:pasta': '#c:foods/pastas'},
+               '#forge:pasta': '#c:foods/pastas', '#forge:eggs': '#c:eggs', '#forge:raw_fishes': '#c:foods/raw_fishes',
+               '#forge:cooked_fishes': '#c:foods/cooked_fishes'},
     'c': {**{f'#forge:crops/{c}': f'#c:crops/{c}' for c in CROPS},
           '#forge:milk': '#c:drinks/milk', '#forge:dough': '#c:foods/dough', '#forge:salad_ingredients': '#c:foods/leafy_green',
-          '#forge:pasta': '#c:foods/pasta'},
+          '#forge:pasta': '#c:foods/pasta', '#forge:eggs': '#c:eggs', '#forge:raw_fishes': '#c:foods/safe_raw_fish',
+          '#forge:cooked_fishes': '#c:foods/cooked_fish'},
 }
 FOODS_MILK = {'#forge:milk': '#c:foods/milk'}  # Farmer's Delight Refabricated 1.21.5 - 1.21.10
 _TOOL_FORGE_OLD = {'tag': 'forge:tools/knives'}
@@ -230,7 +296,7 @@ def write_target(t):
         crit = {'has_the_recipe': {'trigger': 'minecraft:recipe_unlocked', 'conditions': {t.unlock_key: rec_id}}}
         uniq = []
         for x in inputs:
-            if x not in uniq and x not in ('minecraft:paper', 'minecraft:sugar'):
+            if x not in uniq and x not in ('minecraft:paper', 'minecraft:sugar', 'minecraft:bowl'):
                 uniq.append(x)
         for n, x in enumerate(uniq):
             crit[f'has_ingredient_{n}'] = {'trigger': 'minecraft:inventory_changed', 'conditions': {'items': [t.predicate(x)]}}

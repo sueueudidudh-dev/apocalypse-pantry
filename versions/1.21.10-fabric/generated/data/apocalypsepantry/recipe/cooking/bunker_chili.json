@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "minecraft:beef",
+    "farmersdelight:tomato_sauce",
+    "minecraft:cocoa_beans",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "id": "apocalypsepantry:bunker_chili"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

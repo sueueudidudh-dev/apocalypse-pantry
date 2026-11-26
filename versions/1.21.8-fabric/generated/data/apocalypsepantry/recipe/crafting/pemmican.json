@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsepantry",
+  "ingredients": [
+    "minecraft:cooked_beef",
+    "minecraft:sweet_berries",
+    "minecraft:sweet_berries",
+    "minecraft:paper"
+  ],
+  "result": {
+    "id": "apocalypsepantry:pemmican",
+    "count": 2
+  }
+}

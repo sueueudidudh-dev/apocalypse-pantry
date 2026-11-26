@@ -11,7 +11,7 @@ authors="${author}"
 logoFile="apocalypsepantry_logo.png"
 credits="Farmer's Delight by vectorwing."
 description='''
-A Farmer's Delight add-on with food for the end of the world: 17 survival foods cooked in the cooking pot, on the cutting board and at the crafting table, and five effects built around a zombie apocalypse. Zombies can infect you; only Herbal Tea cures it.
+A Farmer's Delight add-on with food for the end of the world: 48 survival foods cooked in the cooking pot, on the cutting board and at the crafting table, and five effects built around a zombie apocalypse. Zombies can infect you; only Herbal Tea cures it.
 '''
 
 [[dependencies.${id}]]

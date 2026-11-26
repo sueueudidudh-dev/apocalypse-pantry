@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsepantry",
+  "ingredients": [
+    "minecraft:pumpkin_seeds",
+    "minecraft:melon_seeds",
+    "minecraft:sweet_berries",
+    "minecraft:cocoa_beans",
+    "minecraft:paper"
+  ],
+  "result": {
+    "id": "apocalypsepantry:trail_mix",
+    "count": 2
+  }
+}

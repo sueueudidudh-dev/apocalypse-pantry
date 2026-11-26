@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsepantry",
+  "ingredients": [
+    "#c:crops/wheat",
+    "minecraft:honey_bottle",
+    "minecraft:sweet_berries",
+    "minecraft:paper"
+  ],
+  "result": {
+    "id": "apocalypsepantry:granola_bar",
+    "count": 2
+  }
+}

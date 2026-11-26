@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "minecraft:porkchop",
+    "minecraft:porkchop",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "apocalypsepantry:canned_ham"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsepantry",
+  "ingredients": [
+    "apocalypsepantry:hardtack",
+    "minecraft:honey_bottle",
+    "minecraft:paper"
+  ],
+  "result": {
+    "id": "apocalypsepantry:emergency_ration"
+  }
+}
