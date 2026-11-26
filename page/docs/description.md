@@ -1,12 +1,12 @@
-![Apocalypse Pantry](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/docs/banner.webp)
+![Apocalypse Pantry](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/banner.webp)
 
 **Food for the end of the world: canned stew, MREs, energy drinks and zombie jerky, each with its own way to keep you alive.**
 
 Apocalypse Pantry adds 17 survival foods to Minecraft and five effects built around a zombie apocalypse: an Infection you catch from zombies, a scent that makes the undead ignore you, and an adrenaline rush that comes with a crash.
 
-![The pantry](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/docs/clips/pantry.webp)
+![The pantry](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/clips/pantry.webp)
 
-![Features](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/docs/desc/title-features.webp)
+![Features](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/desc/title-features.webp)
 
 - **17 survival foods.** Cans, rations, drinks and things you would only eat at the end of the world. Every item has its own 16×16 texture.
 - **Infection.** Zombies can infect you when they hit you. Only the Herbal Tea Canteen cures it, so keep one on you.
@@ -15,7 +15,7 @@ Apocalypse Pantry adds 17 survival foods to Minecraft and five effects built aro
 - **Zombie loot.** Zombies you kill sometimes drop canned food, hardtack, an energy drink or bottled water.
 - **Milk will not save you.** Infection survives milk and totems; the Herbal Tea Canteen is the only cure.
 
-![Effects](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/docs/desc/title-effects.webp)
+![Effects](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/desc/title-effects.webp)
 
 | Effect | What it does |
 | --- | --- |
@@ -25,7 +25,7 @@ Apocalypse Pantry adds 17 survival foods to Minecraft and five effects built aro
 | **Crash** | Slowness I and Mining Fatigue I. Water clears it. |
 | **Stamina** | Hunger drains half as fast. |
 
-![Food](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/docs/desc/title-food.webp)
+![Food](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/desc/title-food.webp)
 
 | Food | Hunger | Effects | Notes |
 | --- | --- | --- | --- |
@@ -47,12 +47,12 @@ Apocalypse Pantry adds 17 survival foods to Minecraft and five effects built aro
 | **Survivor's Stew** | 10 | Resistance I 3:00, Regeneration I 0:20, Stamina 6:00 | In a bowl, stacks to 16 |
 | **Chocolate Ration** | 5 | Speed I and Haste I 1:30, Absorption I 1:00 | - |
 
-![Credits](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/docs/desc/title-credits.webp)
+![Credits](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/desc/title-credits.webp)
 
 - Texture style inspired by **Farmer's Delight** by vectorwing.
 
-![License](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/docs/desc/title-license.webp)
+![License](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/desc/title-license.webp)
 
 Apocalypse Pantry is released under the **MIT License**.
 
-![](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/docs/desc/divider.webp)
+![](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/desc/divider.webp)

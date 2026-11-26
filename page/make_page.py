@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Page art for the zombie-apocalypse food mod in the Stardew Delight page style.
 
-  py make_page.py [base_url]
+  py make_page.py [base_url]     base_url = where this page/ folder is served, e.g.
+                                https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page
 
 Writes into docs/:
   banner.png/.gif/.webp        1536x512, the supply-crate loop (items hop out one by one)
