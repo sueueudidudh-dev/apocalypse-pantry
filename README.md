@@ -54,7 +54,7 @@ py dev\build_all.py 1.21.1-fabric   # одна версия
 py dev\srv.py 1.21.1-fabric         # самопроверка на выделенном сервере (SELFTEST DONE в логе)
 ```
 Готовые jar: `build/libs/1.0.0/apocalypsepantry-<загрузчик>-<версия MC>-1.0.0.jar`.
-Текстуры — `art/make_textures.py`, значки эффектов — `art/make_effect_icons.py`, оформление страницы — `page/make_page.py`.
+Текстуры и значки эффектов нарисованы в Aseprite, исходники — `art/aseprite/*.aseprite` (см. `art/README.md`). Оформление страницы — `page/make_page.py`.
 
 ## Лицензия
 MIT, см. [LICENSE](LICENSE).
