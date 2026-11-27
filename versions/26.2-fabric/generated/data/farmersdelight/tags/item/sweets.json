@@ -1,10 +1,10 @@
 {
   "replace": false,
   "values": [
-    "apocalypsepantry:canned_peaches",
-    "apocalypsepantry:condensed_milk",
-    "apocalypsepantry:chocolate_ration",
-    "apocalypsepantry:dried_fruit",
-    "apocalypsepantry:hard_candy"
+    "apocalypsedelight:canned_peaches",
+    "apocalypsedelight:condensed_milk",
+    "apocalypsedelight:chocolate_ration",
+    "apocalypsedelight:dried_fruit",
+    "apocalypsedelight:hard_candy"
   ]
 }

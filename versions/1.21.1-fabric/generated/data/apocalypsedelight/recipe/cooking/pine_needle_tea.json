@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "drinks",
+  "ingredients": [
+    {
+      "item": "minecraft:spruce_leaves"
+    },
+    {
+      "item": "minecraft:spruce_leaves"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "id": "apocalypsedelight:pine_needle_tea"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

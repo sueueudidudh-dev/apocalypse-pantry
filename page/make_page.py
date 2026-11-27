@@ -2,13 +2,13 @@
 """Page art for the zombie-apocalypse food mod in the Stardew Delight page style.
 
   py make_page.py [base_url]     base_url = where this page/ folder is served, e.g.
-                                https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page
+                                https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-delight/main/page
 
 Writes into docs/:
   banner.png/.gif/.webp        1536x512, the supply-crate loop (items hop out one by one)
   icon-512.png, icon-animated.gif/.webp
   promo-tile.png/.gif/.webp    768x352
-  clips/pantry.gif/.webp       all 17 items, then each one with its name and effect
+  clips/stash.gif/.webp        all 48 foods, then each one with its name and effect
   desc/title-<section>.png/.webp, desc/divider.png/.webp
   description.md / description.html   page text (images from base_url/docs/...)
   page_preview.html            the page with local images, to look at it before uploading
@@ -30,8 +30,8 @@ TEX = HERE.parent / "art" / "textures"
 DOCS = HERE / "docs"
 BASE = (sys.argv[1] if len(sys.argv) > 1 else "https://raw.githubusercontent.com/USER/REPO/main").rstrip("/")
 
-MOD_TOP, MOD_MAIN = "APOCALYPSE", "PANTRY"
-MOD_NAME = "Apocalypse Pantry"
+MOD_TOP, MOD_MAIN = "APOCALYPSE", "DELIGHT"
+MOD_NAME = "Apocalypse Delight"
 TAGLINE = "EAT. SURVIVE. REPEAT."
 TAG_ACCENT_FROM = 14
 
@@ -593,7 +593,7 @@ def icon_frames():
     return frames
 
 
-# ---------------------------------------------------------------- pantry clip
+# ---------------------------------------------------------------- stash clip
 ITEMS = [  # id, English name, short effect line (SMALL font: upper case, no %)
     ("canned_beans", "CANNED BEANS", "STAMINA 3:00"),
     ("canned_stew", "CANNED STEW", "STRENGTH I, STAMINA 5:00"),
@@ -661,10 +661,10 @@ def slot(im, x, y, sel=False):
             put(im, x + xx, y + yy, c)
 
 
-def pantry_frames():
+def stash_frames():
     REVEAL, SHOW = 1, 4
     total = len(ITEMS) * REVEAL + 4 + len(ITEMS) * SHOW
-    title = pa.label_sprite(f"THE PANTRY: {len(ITEMS)} FOODS", lambda i: ACCENT if i > 11 else "#FFFFFF", INK)
+    title = pa.label_sprite(f"THE STASH: {len(ITEMS)} FOODS", lambda i: ACCENT if i > 10 else "#FFFFFF", INK)
     sprites = [item(n) for n, _, _ in ITEMS]
     frames = []
     for f in range(total):
@@ -761,7 +761,7 @@ def page_md(base):
 
 {MOD_NAME} is an add-on for **Farmer's Delight** (**Farmer's Delight Refabricated** on Fabric). It adds 48 survival foods and five effects built around a zombie apocalypse: an Infection you catch from zombies, a scent that makes the undead ignore you, and an adrenaline rush that comes with a crash. Available for **Forge** 1.18.2, 1.19.2 and 1.20.1, **NeoForge** 1.21.1 and **Fabric** 1.20.1, 1.21.1, 1.21.5 – 1.21.11 and 26.1 – 26.3. Requires Farmer's Delight on Forge and NeoForge, Farmer's Delight Refabricated and Fabric API on Fabric.
 
-{img("clips/pantry.webp", "The pantry")}
+{img("clips/stash.webp", "The stash")}
 
 {title("features", "Features")}
 
@@ -880,9 +880,9 @@ def main():
     save_anim(big, DOCS / "icon-animated", FPS, big[0].getchannel("A").point(lambda v: 255 if v > 127 else 0))
     print(f"icon: gif {(DOCS / 'icon-animated.gif').stat().st_size // 1024} KiB")
 
-    pf = pantry_frames()
-    save_anim(pf, DOCS / "clips" / "pantry", 8, pf[0].getchannel("A").point(lambda v: 255 if v > 127 else 0))
-    print(f"pantry clip: {len(pf)} frames")
+    pf = stash_frames()
+    save_anim(pf, DOCS / "clips" / "stash", 8, pf[0].getchannel("A").point(lambda v: 255 if v > 127 else 0))
+    print(f"stash clip: {len(pf)} frames")
 
     md = page_md(BASE)
     (DOCS / "description.md").write_text(md, encoding="utf-8")

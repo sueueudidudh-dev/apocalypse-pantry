@@ -1,13 +1,13 @@
 {
   "replace": false,
   "values": [
-    "apocalypsepantry:energy_drink",
-    "apocalypsepantry:bottled_water",
-    "apocalypsepantry:herbal_tea",
-    "apocalypsepantry:cola",
-    "apocalypsepantry:instant_coffee",
-    "apocalypsepantry:kvass",
-    "apocalypsepantry:moonshine",
-    "apocalypsepantry:pine_needle_tea"
+    "apocalypsedelight:energy_drink",
+    "apocalypsedelight:bottled_water",
+    "apocalypsedelight:herbal_tea",
+    "apocalypsedelight:cola",
+    "apocalypsedelight:instant_coffee",
+    "apocalypsedelight:kvass",
+    "apocalypsedelight:moonshine",
+    "apocalypsedelight:pine_needle_tea"
   ]
 }

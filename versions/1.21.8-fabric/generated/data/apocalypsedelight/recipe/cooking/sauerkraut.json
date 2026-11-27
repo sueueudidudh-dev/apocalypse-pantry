@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "#c:crops/cabbage",
+    "#c:crops/cabbage",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "apocalypsedelight:sauerkraut"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

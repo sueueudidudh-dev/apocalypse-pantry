@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsedelight",
+  "ingredients": [
+    {
+      "item": "apocalypsedelight:hardtack"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "minecraft:paper"
+    }
+  ],
+  "result": {
+    "item": "apocalypsedelight:emergency_ration"
+  }
+}

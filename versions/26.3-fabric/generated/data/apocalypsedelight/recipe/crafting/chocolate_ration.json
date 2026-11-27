@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsedelight",
+  "ingredients": [
+    "minecraft:cocoa_beans",
+    "minecraft:cocoa_beans",
+    "minecraft:sugar",
+    "minecraft:paper"
+  ],
+  "result": {
+    "id": "apocalypsedelight:chocolate_ration",
+    "count": 2
+  }
+}

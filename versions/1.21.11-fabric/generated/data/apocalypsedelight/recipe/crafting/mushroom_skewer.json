@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsedelight",
+  "ingredients": [
+    "minecraft:stick",
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom"
+  ],
+  "result": {
+    "id": "apocalypsedelight:mushroom_skewer"
+  }
+}

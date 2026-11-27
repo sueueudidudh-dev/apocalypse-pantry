@@ -1,10 +1,10 @@
-"""Dedicated-server self-test for one Apocalypse Pantry build.
+"""Dedicated-server self-test for one Apocalypse Delight build.
 
   py dev/srv.py <target>        target like 1.21.1-fabric, 1.20.1-forge, 1.21.1-neoforge
 
 Reuses the test servers in D:/minecraft mods razrab/_test/srv-<target>/ (installed for Stardew Delight). For the run,
 every other mod except Fabric API and Farmer's Delight is moved to mods_off/ and put back afterwards. The server starts with
--Dapocalypsepantry.selftest=true and gets "stop" after SELFTEST DONE. Prints the result lines and suspicious log lines.
+-Dapocalypsedelight.selftest=true and gets "stop" after SELFTEST DONE. Prints the result lines and suspicious log lines.
 """
 import os
 import re
@@ -36,7 +36,7 @@ def mod_version():
 
 def command(target, d):
     jv = os.path.join(JDK[JAVA[target]], 'bin', 'java.exe')
-    flag = '-Dapocalypsepantry.selftest=true'
+    flag = '-Dapocalypsedelight.selftest=true'
     if target.endswith('fabric'):
         return [jv, flag, '-Xmx2G', '-jar', 'fabric-server-launch.jar', 'nogui']
     lv = LOADER[target]
@@ -56,11 +56,11 @@ def main():
     for f in os.listdir(mods):
         if f.endswith('.jar') and not f.startswith(('fabric-api', 'FarmersDelight')):
             shutil.move(os.path.join(mods, f), os.path.join(off, f))
-            if not f.startswith('apocalypsepantry'):
+            if not f.startswith('apocalypsedelight'):
                 moved.append(f)
     mc, loader = target.split('-')
     v = mod_version()
-    jar = os.path.join(ROOT, 'build', 'libs', v, f'apocalypsepantry-{loader}-{mc}-{v}.jar')
+    jar = os.path.join(ROOT, 'build', 'libs', v, f'apocalypsedelight-{loader}-{mc}-{v}.jar')
     shutil.copy(jar, mods)
     shutil.rmtree(os.path.join(d, 'world'), ignore_errors=True)
     log = os.path.join(d, 'ap-server.log')
@@ -88,14 +88,14 @@ def main():
                 time.sleep(1)
     finally:
         for f in os.listdir(mods):
-            if f.startswith('apocalypsepantry'):
+            if f.startswith('apocalypsedelight'):
                 os.remove(os.path.join(mods, f))
         for f in moved:
             shutil.move(os.path.join(off, f), os.path.join(mods, f))
         shutil.rmtree(os.path.join(d, 'world'), ignore_errors=True)
     text = open(log, encoding='utf-8', errors='replace').read()
     print(f'== {target}: exit {code}, {len(text.splitlines())} lines, log {log}')
-    for pat in (r'Done \(', r'Apocalypse Pantry: \d+ foods', r'SELFTEST \d+ recipes', r'SELFTEST DONE'):
+    for pat in (r'Done \(', r'Apocalypse Delight: \d+ foods', r'SELFTEST \d+ recipes', r'SELFTEST DONE'):
         m = re.findall(r'.*' + pat + r'.*', text)
         print('  ' + (m[-1].strip()[:200] if m else f'MISSING: {pat}'))
     for l in re.findall(r'.*SELFTEST FAIL.*', text)[:30]:

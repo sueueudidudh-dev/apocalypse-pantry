@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.apocalypsedelight.mixin",
+  "compatibilityLevel": "${java}",
+  "mixins": [
+    "LivingEntityMixin",
+    "MobMixin",
+    "PlayerMixin",
+    "ServerPlayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "drinks",
+  "ingredients": [
+    {
+      "tag": "forge:crops/potato"
+    },
+    {
+      "tag": "forge:crops/potato"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "apocalypsedelight:moonshine"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

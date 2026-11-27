@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsedelight",
+  "ingredients": [
+    {
+      "item": "minecraft:rotten_flesh"
+    },
+    {
+      "item": "minecraft:cooked_mutton"
+    }
+  ],
+  "result": {
+    "id": "apocalypsedelight:mystery_meat",
+    "count": 2
+  }
+}

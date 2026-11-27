@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "minecraft:sea_pickle",
+    "minecraft:sea_pickle",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "apocalypsedelight:pickled_cucumbers"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

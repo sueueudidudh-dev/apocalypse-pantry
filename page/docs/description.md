@@ -1,12 +1,12 @@
-![Apocalypse Pantry](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/banner.webp)
+![Apocalypse Delight](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-delight/main/page/docs/banner.webp)
 
 **Food for the end of the world, cooked the Farmer's Delight way: canned stew, MREs, energy drinks and zombie jerky.**
 
-Apocalypse Pantry is an add-on for **Farmer's Delight** (**Farmer's Delight Refabricated** on Fabric). It adds 48 survival foods and five effects built around a zombie apocalypse: an Infection you catch from zombies, a scent that makes the undead ignore you, and an adrenaline rush that comes with a crash. Available for **Forge** 1.18.2, 1.19.2 and 1.20.1, **NeoForge** 1.21.1 and **Fabric** 1.20.1, 1.21.1, 1.21.5 – 1.21.11 and 26.1 – 26.3. Requires Farmer's Delight on Forge and NeoForge, Farmer's Delight Refabricated and Fabric API on Fabric.
+Apocalypse Delight is an add-on for **Farmer's Delight** (**Farmer's Delight Refabricated** on Fabric). It adds 48 survival foods and five effects built around a zombie apocalypse: an Infection you catch from zombies, a scent that makes the undead ignore you, and an adrenaline rush that comes with a crash. Available for **Forge** 1.18.2, 1.19.2 and 1.20.1, **NeoForge** 1.21.1 and **Fabric** 1.20.1, 1.21.1, 1.21.5 – 1.21.11 and 26.1 – 26.3. Requires Farmer's Delight on Forge and NeoForge, Farmer's Delight Refabricated and Fabric API on Fabric.
 
-![The pantry](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/clips/pantry.webp)
+![The stash](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-delight/main/page/docs/clips/stash.webp)
 
-![Features](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/desc/title-features.webp)
+![Features](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-delight/main/page/docs/desc/title-features.webp)
 
 - **48 survival foods.** From Canned Beans and Hardtack to MRE Rations, Bunker Chili and Zombie Jerky. Every food has its own texture drawn in Farmer's Delight's style.
 - **Four ways to cook.** 29 foods simmer in the cooking pot, 15 are made at the crafting table, Jerky is sliced on the cutting board, and Zombie Jerky, Roasted Spider Eye and Dried Fruit are cooked in a smoker or on a campfire.
@@ -18,7 +18,7 @@ Apocalypse Pantry is an add-on for **Farmer's Delight** (**Farmer's Delight Refa
 - **Comfort and Nourishment.** Soups, teas, porridge and noodles give Farmer's Delight's **Comfort**, Survivor's Stew, Game Stew and Bunker Chili give **Nourishment**.
 - **Zombie loot.** Zombies you kill sometimes drop canned food, hardtack, an energy drink or bottled water.
 
-![Effects](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/desc/title-effects.webp)
+![Effects](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-delight/main/page/docs/desc/title-effects.webp)
 
 | Effect | What it does |
 | --- | --- |
@@ -28,7 +28,7 @@ Apocalypse Pantry is an add-on for **Farmer's Delight** (**Farmer's Delight Refa
 | **Crash** | Slowness I and Mining Fatigue I. Water clears it. |
 | **Stamina** | Hunger drains half as fast. |
 
-![Food](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/desc/title-food.webp)
+![Food](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-delight/main/page/docs/desc/title-food.webp)
 
 | Food | What it gives |
 | --- | --- |
@@ -41,19 +41,19 @@ Apocalypse Pantry is an add-on for **Farmer's Delight** (**Farmer's Delight Refa
 | **Bunker Chili** | Nourishment 2:00, Fire Resistance I 2:00 |
 | **Moonshine** | Resistance I 1:00, Nausea I 0:10 |
 
-![Recipes](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/desc/title-recipes.webp)
+![Recipes](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-delight/main/page/docs/desc/title-recipes.webp)
 
 - **Cooking pot:** Canned Stew (beef, potato, onion), Survivor's Stew (beef, potato, carrot, brown mushroom, onion), Energy Drink (sugar, cocoa beans, glowstone dust), Herbal Tea (fern, sweet berries, salad greens) and 25 more.
 - **Crafting table:** MRE Ration (Hardtack, Jerky, Chocolate Ration, paper), Hardtack (wheat dough, wheat), Pemmican (cooked beef, sweet berries ×2, paper), Mushroom Skewer (stick, brown mushroom, red mushroom) and 11 more.
 - **Cutting board:** Jerky, from cooked beef or a cooked porkchop with a knife.
 - **Smoker and campfire:** Zombie Jerky from rotten flesh and Roasted Spider Eye from a spider eye; Dried Fruit from an apple in the smoker.
 
-![Credits](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/desc/title-credits.webp)
+![Credits](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-delight/main/page/docs/desc/title-credits.webp)
 
 - **Farmer's Delight** by vectorwing.
 
-![License](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/desc/title-license.webp)
+![License](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-delight/main/page/docs/desc/title-license.webp)
 
-Apocalypse Pantry is released under the **MIT License**.
+Apocalypse Delight is released under the **MIT License**.
 
-![](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-pantry/main/page/docs/desc/divider.webp)
+![](https://raw.githubusercontent.com/sueueudidudh-dev/apocalypse-delight/main/page/docs/desc/divider.webp)

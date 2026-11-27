@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsedelight",
+  "ingredients": [
+    "#c:foods/cooked_fish",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "apocalypsedelight:fish_jerky",
+    "count": 2
+  }
+}

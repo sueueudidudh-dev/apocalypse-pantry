@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsedelight",
+  "ingredients": [
+    "#c:crops/wheat",
+    "minecraft:honey_bottle",
+    "minecraft:pumpkin_seeds",
+    "minecraft:paper"
+  ],
+  "result": {
+    "id": "apocalypsedelight:protein_bar",
+    "count": 2
+  }
+}

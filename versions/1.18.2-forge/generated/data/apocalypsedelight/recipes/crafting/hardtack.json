@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsedelight",
+  "ingredients": [
+    {
+      "tag": "forge:dough"
+    },
+    {
+      "tag": "forge:crops/wheat"
+    }
+  ],
+  "result": {
+    "item": "apocalypsedelight:hardtack",
+    "count": 2
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "drinks",
+  "ingredients": [
+    "minecraft:fern",
+    "minecraft:sweet_berries",
+    "#c:foods/leafy_green"
+  ],
+  "result": {
+    "id": "apocalypsedelight:herbal_tea"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

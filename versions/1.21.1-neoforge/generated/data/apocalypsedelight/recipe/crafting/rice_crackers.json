@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsedelight",
+  "ingredients": [
+    {
+      "tag": "c:crops/rice"
+    },
+    {
+      "tag": "c:crops/rice"
+    }
+  ],
+  "result": {
+    "id": "apocalypsedelight:rice_crackers",
+    "count": 2
+  }
+}

@@ -5,9 +5,9 @@
 #   mod.mc_compat    Minecraft range written into fabric.mod.json / mods.toml (the same range Farmer's Delight uses)
 #   deps.fd          Farmer's Delight (Refabricated on Fabric) version on Modrinth Maven
 #   deps.fd_range    Farmer's Delight range in mods.toml (Forge/NeoForge)
-mod.id = "apocalypsepantry"
-mod.name = "Apocalypse Pantry"
-mod.group = "com.apocalypsepantry"
+mod.id = "apocalypsedelight"
+mod.name = "Apocalypse Delight"
+mod.group = "com.apocalypsedelight"
 mod.version = "1.0.0"
 mod.author = "Karasik_1664"
 

@@ -1,9 +1,9 @@
-<p align="center"><img src="page/docs/banner.gif" alt="Apocalypse Pantry" width="100%"></p>
+<p align="center"><img src="page/docs/banner.gif" alt="Apocalypse Delight" width="100%"></p>
 
 **Food for the end of the world.** 48 survival foods and five effects built around a zombie apocalypse.
 The mod page text is in [`page/docs/description.md`](page/docs/description.md).
 
-# Apocalypse Pantry — аддон для Farmer's Delight: еда для зомби-апокалипсиса
+# Apocalypse Delight — аддон для Farmer's Delight: еда для зомби-апокалипсиса
 
 * **Minecraft 1.18.2 – 26.3** на **Forge, NeoForge и Fabric** — те же версии, что у Stardew Delight (таблица ниже)
 * Требуется **Farmer's Delight**; на Fabric — **Farmer's Delight Refabricated** и **Fabric API**
@@ -12,19 +12,19 @@ The mod page text is in [`page/docs/description.md`](page/docs/description.md).
 ## Версии
 | Minecraft | Загрузчик | Файл |
 |---|---|---|
-| 26.3 | Fabric | `apocalypsepantry-fabric-26.3-1.0.0.jar` |
-| 26.2 | Fabric | `apocalypsepantry-fabric-26.2-1.0.0.jar` |
-| 26.1 – 26.1.2 | Fabric | `apocalypsepantry-fabric-26.1-1.0.0.jar` |
-| 1.21.11 | Fabric | `apocalypsepantry-fabric-1.21.11-1.0.0.jar` |
-| 1.21.9 – 1.21.10 | Fabric | `apocalypsepantry-fabric-1.21.10-1.0.0.jar` |
-| 1.21.6 – 1.21.8 | Fabric | `apocalypsepantry-fabric-1.21.8-1.0.0.jar` |
-| 1.21.5 | Fabric | `apocalypsepantry-fabric-1.21.5-1.0.0.jar` |
-| 1.21.1 | NeoForge | `apocalypsepantry-neoforge-1.21.1-1.0.0.jar` |
-| 1.21.1 | Fabric | `apocalypsepantry-fabric-1.21.1-1.0.0.jar` |
-| 1.20.1 | Forge | `apocalypsepantry-forge-1.20.1-1.0.0.jar` |
-| 1.20.1 | Fabric | `apocalypsepantry-fabric-1.20.1-1.0.0.jar` |
-| 1.19.2 | Forge | `apocalypsepantry-forge-1.19.2-1.0.0.jar` |
-| 1.18.2 | Forge | `apocalypsepantry-forge-1.18.2-1.0.0.jar` |
+| 26.3 | Fabric | `apocalypsedelight-fabric-26.3-1.0.0.jar` |
+| 26.2 | Fabric | `apocalypsedelight-fabric-26.2-1.0.0.jar` |
+| 26.1 – 26.1.2 | Fabric | `apocalypsedelight-fabric-26.1-1.0.0.jar` |
+| 1.21.11 | Fabric | `apocalypsedelight-fabric-1.21.11-1.0.0.jar` |
+| 1.21.9 – 1.21.10 | Fabric | `apocalypsedelight-fabric-1.21.10-1.0.0.jar` |
+| 1.21.6 – 1.21.8 | Fabric | `apocalypsedelight-fabric-1.21.8-1.0.0.jar` |
+| 1.21.5 | Fabric | `apocalypsedelight-fabric-1.21.5-1.0.0.jar` |
+| 1.21.1 | NeoForge | `apocalypsedelight-neoforge-1.21.1-1.0.0.jar` |
+| 1.21.1 | Fabric | `apocalypsedelight-fabric-1.21.1-1.0.0.jar` |
+| 1.20.1 | Forge | `apocalypsedelight-forge-1.20.1-1.0.0.jar` |
+| 1.20.1 | Fabric | `apocalypsedelight-fabric-1.20.1-1.0.0.jar` |
+| 1.19.2 | Forge | `apocalypsedelight-forge-1.19.2-1.0.0.jar` |
+| 1.18.2 | Forge | `apocalypsedelight-forge-1.18.2-1.0.0.jar` |
 
 ## Что в моде
 * **48 блюд** (`Foods.java`) и пустая банка. Предметы — `ConsumableItem` / `DrinkableItem` из Farmer's Delight: консервы
@@ -53,7 +53,7 @@ py dev\build_all.py                 # все версии по очереди, �
 py dev\build_all.py 1.21.1-fabric   # одна версия
 py dev\srv.py 1.21.1-fabric         # самопроверка на выделенном сервере (SELFTEST DONE в логе)
 ```
-Готовые jar: `build/libs/1.0.0/apocalypsepantry-<загрузчик>-<версия MC>-1.0.0.jar`.
+Готовые jar: `build/libs/1.0.0/apocalypsedelight-<загрузчик>-<версия MC>-1.0.0.jar`.
 Текстуры и значки эффектов нарисованы в Aseprite, исходники — `art/aseprite/*.aseprite` (см. `art/README.md`). Оформление страницы — `page/make_page.py`.
 
 ## Лицензия

@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "#c:foods/milk",
+    "minecraft:sugar",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "apocalypsedelight:condensed_milk"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

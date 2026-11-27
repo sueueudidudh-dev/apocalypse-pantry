@@ -1,8 +1,8 @@
-"""Data generator for Apocalypse Pantry, a Farmer's Delight add-on.
+"""Data generator for Apocalypse Delight, a Farmer's Delight add-on.
 
 Writes:
   * shared assets: item models, item textures (copied from art/textures) and the language files
-    (src/main/resources/assets/apocalypsepantry);
+    (src/main/resources/assets/apocalypsedelight);
   * per Minecraft version + loader (versions/<version>-<loader>/generated): recipes (cooking pot, cutting board,
     crafting table, smoker, campfire, furnace), recipe-unlock advancements, Farmer's Delight category tags,
     item definitions (1.21.4+) and pack.mcmeta (Forge).
@@ -17,7 +17,7 @@ import os
 import shutil
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MOD = 'apocalypsepantry'
+MOD = 'apocalypsedelight'
 RES = os.path.join(ROOT, 'src/main/resources')
 ART = os.path.join(ROOT, 'art/textures')
 
@@ -261,7 +261,7 @@ def write_assets():
     for k, lang in ((0, 'en_us'), (1, 'ru_ru')):
         out = {f'item.{MOD}.{i}': v[k] for i, v in ITEMS.items()}
         out.update({f'effect.{MOD}.{i}': v[k] for i, v in EFFECTS.items()})
-        out['itemGroup.' + MOD] = 'Apocalypse Pantry'
+        out['itemGroup.' + MOD] = 'Apocalypse Delight'
         wjson(os.path.join(a, 'lang', lang + '.json'), out)
     shutil.copyfile(os.path.join(ROOT, 'page', 'docs', 'icon-512.png'), os.path.join(RES, MOD + '_logo.png'))
 
@@ -314,7 +314,7 @@ def write_target(t):
             wjson(os.path.join(t.out, 'assets', MOD, 'items', i + '.json'), {'model': {'type': 'minecraft:model', 'model': f'{MOD}:item/{i}'}})
     if t.pack:
         resource, datapack = t.pack
-        pack = {'description': 'Apocalypse Pantry resources', 'pack_format': datapack}
+        pack = {'description': 'Apocalypse Delight resources', 'pack_format': datapack}
         if resource != datapack:
             pack['forge:resource_pack_format'] = resource
             pack['forge:data_pack_format'] = datapack

@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "minecraft:cocoa_beans",
+    "minecraft:cocoa_beans",
+    "farmersdelight:tomato_sauce"
+  ],
+  "result": {
+    "id": "apocalypsedelight:canned_beans"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

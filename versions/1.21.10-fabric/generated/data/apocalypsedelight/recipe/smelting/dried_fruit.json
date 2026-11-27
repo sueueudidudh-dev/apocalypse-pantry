@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": "minecraft:apple",
+  "result": {
+    "id": "apocalypsedelight:dried_fruit"
+  },
+  "experience": 0.35,
+  "cookingtime": 100
+}

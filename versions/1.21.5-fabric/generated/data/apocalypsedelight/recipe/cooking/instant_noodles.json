@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "#c:foods/pasta",
+    "minecraft:dried_kelp",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "id": "apocalypsedelight:instant_noodles"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

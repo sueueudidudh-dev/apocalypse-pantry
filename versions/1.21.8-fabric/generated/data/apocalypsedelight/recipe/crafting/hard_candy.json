@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "apocalypsedelight",
+  "ingredients": [
+    "minecraft:sugar",
+    "minecraft:sugar",
+    "minecraft:sweet_berries"
+  ],
+  "result": {
+    "id": "apocalypsedelight:hard_candy",
+    "count": 4
+  }
+}

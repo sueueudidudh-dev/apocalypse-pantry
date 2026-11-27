@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "minecraft:beef",
+    "#c:crops/potato",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "id": "apocalypsedelight:canned_stew"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

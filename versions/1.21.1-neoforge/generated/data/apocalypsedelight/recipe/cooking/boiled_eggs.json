@@ -1,0 +1,18 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "tag": "c:eggs"
+    }
+  ],
+  "result": {
+    "id": "apocalypsedelight:boiled_eggs",
+    "count": 2
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "minecraft:apple",
+    "minecraft:apple",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "apocalypsedelight:canned_peaches"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

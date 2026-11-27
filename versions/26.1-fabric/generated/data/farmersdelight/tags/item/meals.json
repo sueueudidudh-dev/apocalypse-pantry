@@ -1,21 +1,21 @@
 {
   "replace": false,
   "values": [
-    "apocalypsepantry:canned_beans",
-    "apocalypsepantry:canned_stew",
-    "apocalypsepantry:instant_noodles",
-    "apocalypsepantry:survivor_stew",
-    "apocalypsepantry:canned_fish",
-    "apocalypsepantry:canned_tomato_soup",
-    "apocalypsepantry:canned_mushrooms",
-    "apocalypsepantry:canned_ham",
-    "apocalypsepantry:canned_dog_food",
-    "apocalypsepantry:marrow_soup",
-    "apocalypsepantry:game_stew",
-    "apocalypsepantry:dandelion_salad",
-    "apocalypsepantry:porridge",
-    "apocalypsepantry:rice_gruel",
-    "apocalypsepantry:bunker_chili",
-    "apocalypsepantry:scavenger_soup"
+    "apocalypsedelight:canned_beans",
+    "apocalypsedelight:canned_stew",
+    "apocalypsedelight:instant_noodles",
+    "apocalypsedelight:survivor_stew",
+    "apocalypsedelight:canned_fish",
+    "apocalypsedelight:canned_tomato_soup",
+    "apocalypsedelight:canned_mushrooms",
+    "apocalypsedelight:canned_ham",
+    "apocalypsedelight:canned_dog_food",
+    "apocalypsedelight:marrow_soup",
+    "apocalypsedelight:game_stew",
+    "apocalypsedelight:dandelion_salad",
+    "apocalypsedelight:porridge",
+    "apocalypsedelight:rice_gruel",
+    "apocalypsedelight:bunker_chili",
+    "apocalypsedelight:scavenger_soup"
   ]
 }

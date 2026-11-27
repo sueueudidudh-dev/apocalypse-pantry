@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "drinks",
+  "ingredients": [
+    "#c:crops/potato",
+    "#c:crops/potato",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "apocalypsedelight:moonshine"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

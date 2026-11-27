@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "minecraft:rabbit",
+    "#c:crops/potato",
+    "#c:crops/carrot",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "id": "apocalypsedelight:game_stew"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

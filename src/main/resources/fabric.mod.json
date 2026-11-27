@@ -12,15 +12,15 @@
     "issues": "https://github.com/sueueudidudh-dev/apocalypse-pantry/issues"
   },
   "license": "MIT",
-  "icon": "apocalypsepantry_logo.png",
+  "icon": "apocalypsedelight_logo.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.apocalypsepantry.ApocalypsePantryFabric"
+      "com.apocalypsedelight.ApocalypseDelightFabric"
     ]
   },
   "mixins": [
-    "apocalypsepantry.mixins.json"
+    "apocalypsedelight.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.15",

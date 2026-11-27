@@ -1,0 +1,12 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "drinks",
+  "ingredients": [
+    "minecraft:ice"
+  ],
+  "result": {
+    "id": "apocalypsedelight:bottled_water"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

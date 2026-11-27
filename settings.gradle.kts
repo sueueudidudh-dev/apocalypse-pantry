@@ -61,4 +61,4 @@ gradle.lifecycle.beforeProject {
     }
 }
 
-rootProject.name = "Apocalypse Pantry"
+rootProject.name = "Apocalypse Delight"
